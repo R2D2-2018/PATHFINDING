@@ -1,10 +1,16 @@
-#include "wrap-hwlib.hpp"
+#include <iostream>
+
+#include "library-interface.hpp"
+#include "serial-interface.hpp"
 
 int main() {
-    WDT->WDT_MR = WDT_MR_WDDIS;
+    LibraryInterface interface;
 
-    hwlib::wait_ms(1000);
-    hwlib::cout << "Hello world!" << hwlib::endl;
+    interface.findPath();
 
-    return 0;
+    SerialInterface serialInterface;
+
+    serialInterface.findPath();
+
+    std::cout << "Hello world!" << std::endl;
 }
