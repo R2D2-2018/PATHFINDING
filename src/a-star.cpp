@@ -1,3 +1,10 @@
+/**
+ * @file      a-star.cpp
+ * @brief     A* algorithm definitions
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #include "a-star.hpp"
 
 AStar::AStar() { }

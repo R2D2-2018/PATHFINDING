@@ -1,3 +1,10 @@
+/**
+ * @file      data-interface.hpp
+ * @brief     Data Interface abstract class declarations
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #ifndef DATA_INTERFACE_HPP
 #define DATA_INTERFACE_HPP
 

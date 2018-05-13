@@ -1,3 +1,10 @@
+/**
+ * @file      node.hpp
+ * @brief     Node class declarations
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #ifndef NODE_HPP
 #define NODE_HPP
 

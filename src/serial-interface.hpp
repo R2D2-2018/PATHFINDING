@@ -1,3 +1,10 @@
+/**
+ * @file      serial-interface.hpp
+ * @brief     Serial Interface class declarations
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #ifndef SERIAL_INTERFACE_HPP
 #define SERIAL_INTERFACE_HPP
 

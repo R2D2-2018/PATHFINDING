@@ -1,3 +1,10 @@
+/**
+ * @file      a-star.hpp
+ * @brief     A* algorithm declarations
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #ifndef A_STAR_HPP
 #define A_STAR_HPP
 

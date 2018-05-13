@@ -1,3 +1,10 @@
+/**
+ * @file      library-interface.hpp
+ * @brief     Library Interface class declarations
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
 #ifndef LIBRARY_INTERFACE_HPP
 #define LIBRARY_INTERFACE_HPP
 
