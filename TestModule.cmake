@@ -54,5 +54,10 @@ set_tests_properties (
 endif (UNIX AND memcheck_enabled)
 endif (test_build)
 
+
+add_definitions (-DBMPTK_TARGET_native
+                 -DBMPTK_TARGET=native
+                 -DBMPTK_BAUDRATE=19200)
+
 # The target that is compiled for:
 include (${toolchain}/targets/test/test.cmake)
