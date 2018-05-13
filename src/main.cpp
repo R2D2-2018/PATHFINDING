@@ -7,8 +7,8 @@
 
 #include <iostream>
 
-#include "library-interface.hpp"
-#include "serial-interface.hpp"
+#include "library_interface.hpp"
+#include "serial_interface.hpp"
 
 int main() {
     LibraryInterface interface;

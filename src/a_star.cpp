@@ -1,11 +1,11 @@
 /**
- * @file      a-star.cpp
+ * @file      a_star.cpp
  * @brief     A* algorithm definitions
  * @author    Julian van Doorn
  * @license   See LICENSE
  */
 
-#include "a-star.hpp"
+#include "a_star.hpp"
 
 AStar::AStar() { }
 

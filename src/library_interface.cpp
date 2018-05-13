@@ -1,11 +1,11 @@
 /**
- * @file      library-interface.cpp
+ * @file      library_interface.cpp
  * @brief     Library Interface class definitions
  * @author    Julian van Doorn
  * @license   See LICENSE
  */
 
-#include "library-interface.hpp"
+#include "library_interface.hpp"
 
 Graph LibraryInterface::findPath() const {
     return Graph();

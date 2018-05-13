@@ -54,10 +54,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(sources
     src/main.cpp
-    src/a-star.cpp
+    src/a_star.cpp
     src/graph.cpp
-    src/library-interface.cpp
-    src/serial-interface.cpp
+    src/library_interface.cpp
+    src/serial_interface.cpp
     src/node.cpp
 )
 

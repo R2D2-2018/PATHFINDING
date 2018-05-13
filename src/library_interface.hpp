@@ -8,7 +8,7 @@
 #ifndef LIBRARY_INTERFACE_HPP
 #define LIBRARY_INTERFACE_HPP
 
-#include "data-interface.hpp"
+#include "data_interface.hpp"
 
 class LibraryInterface : public DataInterface {
 public:

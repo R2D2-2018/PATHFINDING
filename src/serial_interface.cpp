@@ -5,7 +5,7 @@
  * @license   See LICENSE
  */
 
-#include "serial-interface.hpp"
+#include "serial_interface.hpp"
 
 Graph SerialInterface::findPath() const {
     return Graph();

@@ -1,5 +1,5 @@
 /**
- * @file      data-interface.hpp
+ * @file      data_interface.hpp
  * @brief     Data Interface abstract class declarations
  * @author    Julian van Doorn
  * @license   See LICENSE

@@ -1,11 +1,11 @@
 /**
- * @file      best-first-search.cpp
+ * @file      best_first_search.cpp
  * @brief     Best First Search algorithm definitions
  * @author    Julian van Doorn
  * @license   See LICENSE
  */
 
-#include "best-first-search.hpp"
+#include "best_first_search.hpp"
 
 BestFirstSearch::BestFirstSearch() { }
 

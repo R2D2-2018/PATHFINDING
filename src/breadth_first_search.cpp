@@ -1,11 +1,11 @@
 /**
- * @file      breadth-first-search.cpp
+ * @file      breadth_first_search.cpp
  * @brief     Breadth First Search algorithm definitions
  * @author    Julian van Doorn
  * @license   See LICENSE
  */
 
-#include "breadth-first-search.hpp"
+#include "breadth_first_search.hpp"
 
 BreadthFirstSearch::BreadthFirstSearch() { }
 

@@ -8,7 +8,7 @@
 #ifndef SERIAL_INTERFACE_HPP
 #define SERIAL_INTERFACE_HPP
 
-#include "data-interface.hpp"
+#include "data_interface.hpp"
 
 class SerialInterface : public DataInterface {
 public:
