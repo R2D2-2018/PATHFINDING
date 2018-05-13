@@ -10,11 +10,21 @@
 
 class Node {
 private:
+    int id;
+    class Node** edges;
     int edgesCount;
-    class Node* edges;
 
 public:
-    void getEdges(class Node*& edges, int& edgesCount) const;
+    Node(int id);
+    Node(int id, Node** edges, int edgesCount);
+    Node(const Node& n);
+    void getEdges(class Node*** edges, int* edgesCount) const;
+    void setEdges(class Node** edges, int edgesCount);
+
+    template <class T>
+    friend T& operator<< (T& os, const Node& n) {
+        return os << "Node " << n.id;
+    }
 };
 
 #endif // NODE_HPP
