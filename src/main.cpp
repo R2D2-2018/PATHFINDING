@@ -18,6 +18,4 @@ int main() {
     SerialInterface serialInterface;
 
     serialInterface.findPath();
-
-    std::cout << "Hello world!" << std::endl;
 }
