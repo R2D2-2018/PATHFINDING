@@ -6,6 +6,7 @@
  */
 
 #include "breadth_first_search.hpp"
+#include "queue.hpp"
 
 namespace Pathfinding {
     BreadthFirstSearch::BreadthFirstSearch() { }
@@ -14,6 +15,30 @@ namespace Pathfinding {
 
     }
 
-Graph BreadthFirstSearch::findPath(Node& begin, Node& end) {
-    return Graph();
-}} // namespace Pathfinding} // namespace Pathfinding} // namespace Pathfinding} // namespace Pathfinding} // namespace Pathfinding
+    Graph BreadthFirstSearch::findPath(Node& begin, Node& end) {
+        Node*** edges;
+        int edgesCount;
+        
+        begin.getEdges(edges, &edgesCount);
+
+        queue<Node*, 32> q;
+
+        q.enqueue(&begin);
+
+        while (!q.empty()) {
+            Node* n = q.dequeue();
+
+            n->getEdges(edges, &edgesCount);
+
+            for (int i = 0; i < edgesCount; i++) {
+                if (n == &end) {
+                    return Graph();
+                }
+
+                q.enqueue(*edges[i]);
+            }
+        }
+
+        return Graph();
+    }
+} // namespace Pathfinding
