@@ -7,12 +7,14 @@
 
 #include "a_star.hpp"
 
-AStar::AStar() { }
+namespace Pathfinding {
+    AStar::AStar() { }
 
-void AStar::setGraph() {
+    void AStar::setGraph(Graph& graph) {
 
-}
+    }
 
-Graph AStar::findPath(Node& begin, Node& end) {
-    return Graph();
-}
+    Graph AStar::findPath(Node& begin, Node& end) {
+        return Graph();
+    }
+} // namespace Pathfinding

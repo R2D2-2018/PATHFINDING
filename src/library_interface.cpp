@@ -7,10 +7,12 @@
 
 #include "library_interface.hpp"
 
-Graph LibraryInterface::findPath() const {
-    return Graph();
-}
+namespace Pathfinding {
+    Graph LibraryInterface::findPath() const {
+        return Graph();
+    }
 
-void LibraryInterface::setMap(Graph map) {
+    void LibraryInterface::setMap(Graph map) {
 
-}
+    }
+} // namespace Pathfinding

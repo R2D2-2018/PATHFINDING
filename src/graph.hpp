@@ -10,10 +10,16 @@
 
 #include "node.hpp"
 
-class Graph {
-public:
-    Graph();
-    void getNodes(Node*& nodes, int& len);
-};
+namespace Pathfinding {
+    class Graph {
+    private:
+        Node** nodes;
+        Node** cumulativeEdges; // all edges combined
+
+    public:
+        Graph();
+        void getNodes(Node** nodes, int& len);
+    };
+} // namespace Pathfinding
 
 #endif // GRAPH_HPP

@@ -7,10 +7,12 @@
 
 #include "graph.hpp"
 
-Graph::Graph() {
+namespace Pathfinding {
+    Graph::Graph() {
 
-}
+    }
 
-void Graph::getNodes(Node*& nodes, int& len) {
-    
-}
+    void Graph::getNodes(Node** nodes, int& len) {
+        
+    }
+} // namespace Pathfinding

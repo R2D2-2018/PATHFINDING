@@ -10,12 +10,14 @@
 
 #include "pathfinding_algorithm.hpp"
 
-class AStar : public PathfindingAlgorithm {
-public:
-    AStar();
+namespace Pathfinding {
+    class AStar : public PathfindingAlgorithm {
+    public:
+        AStar();
 
-    void setGraph() override;
-    Graph findPath(Node& begin, Node& end) override;
-};
+        void setGraph(Graph& graph) override;
+        Graph findPath(Node& begin, Node& end) override;
+    };
+} // namespace Pathfinding
 
 #endif // A_STAR_HPP

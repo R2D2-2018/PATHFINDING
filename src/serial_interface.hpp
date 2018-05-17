@@ -10,11 +10,13 @@
 
 #include "data_interface.hpp"
 
-class SerialInterface : public DataInterface {
-public:
-    Graph findPath() const override;
-    void setMap(Graph map) override;
-    void poll();
-};
+namespace Pathfinding {
+    class SerialInterface : public DataInterface {
+    public:
+        Graph findPath() const override;
+        void setMap(Graph map) override;
+        void poll();
+    };
+} // namespace Pathfinding
 
 #endif // SERIAL_INTERFACE_HPP

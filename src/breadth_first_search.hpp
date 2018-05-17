@@ -10,12 +10,14 @@
 
 #include "pathfinding_algorithm.hpp"
 
-class BreadthFirstSearch : public PathfindingAlgorithm {
-public:
-    BreadthFirstSearch();
+namespace Pathfinding {
+    class BreadthFirstSearch : public PathfindingAlgorithm {
+    public:
+        BreadthFirstSearch();
 
-    void setGraph() override;
-    Graph findPath(Node& begin, Node& end) override;
-};
+        void setGraph(Graph& graph) override;
+        Graph findPath(Node& begin, Node& end) override;
+    };
+} // namespace Pathfinding
 
 #endif // BREADTH_FIRST_SEARCH_HPP

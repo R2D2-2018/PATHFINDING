@@ -10,10 +10,12 @@
 
 #include "graph.hpp"
 
-class PathfindingAlgorithm {
-public:
-    virtual void setGraph() = 0;
-    virtual Graph findPath(Node& begin, Node& end) = 0;
-};
+namespace Pathfinding {
+    class PathfindingAlgorithm {
+    public:
+        virtual void setGraph(Graph& graph) = 0;
+        virtual Graph findPath(Node& begin, Node& end) = 0;
+    };
+} // namespace Pathfinding
 
 #endif // PATHFINDING_ALGORITHM_HPP
