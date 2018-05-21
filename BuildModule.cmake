@@ -5,8 +5,8 @@ set (sources ${sources}
     src/wrap-hwlib.cpp
 )
 
-add_definitions (-DBMPTK_TARGET_arduino_due
-                 -DBMPTK_TARGET=arduino_due
+add_definitions (-DBMPTK_TARGET_none
+                 -DBMPTK_TARGET=none
                  -DBMPTK_BAUDRATE=19200)
 
 set (cxxflags
