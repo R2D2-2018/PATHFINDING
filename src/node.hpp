@@ -33,7 +33,6 @@ namespace Pathfinding {
          * @param edgesCount Amount of edges this node has 
          */
         Node(int id, Node** edges, int edgesCount);
-        Node(const Node& n);
 
         /**
          * @brief Gets the edges array of this Node

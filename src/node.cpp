@@ -10,12 +10,6 @@
 namespace Pathfinding {
     Node::Node(int id) : id(id) { }
 
-    Node::Node(const Node& node) :
-        id(node.id),
-        edges(node.edges),
-        edgesCount(node.edgesCount)
-    { }
-
     Node::Node(int id, Node** edges, int edgesCount) :
         id(id),
         edges(edges),
