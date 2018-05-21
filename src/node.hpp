@@ -12,8 +12,10 @@ namespace Pathfinding {
     class Node {
     private:
         int id;
-        class Node** edges;
+        Node** edges;
         int edgesCount;
+        int state;
+        Node* parent;
 
     public:
         Node(int id);
@@ -21,7 +23,11 @@ namespace Pathfinding {
         Node(const Node& n);
         void getEdges(class Node*** edges, int* edgesCount) const;
         void setEdges(class Node** edges, int edgesCount);
-
+        int getState() const;
+        void setState(int state);
+        Node* getParent() const;
+        void setParent(Node* parent);
+        
         template <class T>
         friend T& operator<< (T& os, const Node& n) {
             return os << "Node " << n.id;

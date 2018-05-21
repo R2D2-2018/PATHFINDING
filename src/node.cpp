@@ -31,4 +31,20 @@ namespace Pathfinding {
         this->edges = edges;
         this->edgesCount = edgesCount;
     }
+
+    int Node::getState() const {
+        return this->state;
+    }
+
+    void Node::setState(int state) {
+        this->state = state;
+    }
+
+    Node* Node::getParent() const {
+        return this->parent;
+    }
+
+    void Node::setParent(Node* parent) {
+        this->parent = parent;
+    }
 } // namespace Pathfinding
