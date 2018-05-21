@@ -9,7 +9,7 @@
 
 namespace Pathfinding {
     Graph SerialInterface::findPath() const {
-        return Graph();
+        return Graph(nullptr, 0, nullptr, 0);
     }
 
     void SerialInterface::setMap(Graph map) {
