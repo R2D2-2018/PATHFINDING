@@ -9,14 +9,22 @@
 #define BREADTH_FIRST_SEARCH_HPP
 
 #include "pathfinding_algorithm.hpp"
+#include "graph.hpp"
 
 namespace Pathfinding {
     class BreadthFirstSearch : public PathfindingAlgorithm {
+    private:
+        Graph* graph;
+
+        enum class State {
+            NotVisited,
+            Visited
+        };
+
     public:
         BreadthFirstSearch();
 
-        void setGraph(Graph& graph) override;
-        Graph findPath(Node& begin, Node& end) override;
+        SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) override;
     };
 } // namespace Pathfinding
 
