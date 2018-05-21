@@ -16,6 +16,13 @@ namespace Pathfinding {
     private:
         Graph* graph;
 
+        /**
+         * @brief State of a node
+         * 
+         * @details 
+         * Nodes store state using ints, so when invoking Node::setState(int)
+         * State must be casted into an integer.
+         */
         enum class State {
             NotVisited,
             Visited
@@ -24,6 +31,20 @@ namespace Pathfinding {
     public:
         BreadthFirstSearch();
 
+        /**
+         * @brief Finds a path using the breadth first search algorithm
+         * 
+         * @details
+         * This class is a subclass of the PathfindingAlgorithm abstract class.
+         * It is used for calculating a path in the Graph class.
+         * 
+         * @param[in] begin Begin node to seek from
+         * @param[in] end End node to seek for
+         * @param[out] path Path buffer array to fill with the path
+         * @param[in] len Max length of path
+         * @param[out] travelled Calculated path length
+         * @return SuccessState State of the previous Calculated path
+         */
         SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) override;
     };
 } // namespace Pathfinding
