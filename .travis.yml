@@ -10,7 +10,7 @@ python:
 
 install:
   - sudo pip2 install lizard -q # Cyclomatic Complexity Check Tool
-  - sudo update-alternartives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
 addons:
   apt:
