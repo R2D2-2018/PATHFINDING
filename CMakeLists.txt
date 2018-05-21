@@ -19,7 +19,7 @@ else (NOT ${test_build})
 set (CMAKE_TOOLCHAIN_FILE ${toolchain}/compilers/host-gcc.cmake)
 endif (NOT ${test_build})
 
-project (arduino-template CXX)
+project (pathfinding CXX)
 
 include (Sources.cmake)
 
