@@ -14,8 +14,6 @@
 namespace Pathfinding {
     class BreadthFirstSearch : public PathfindingAlgorithm {
     private:
-        Graph* graph;
-
         /**
          * @brief State of a node
          * 
