@@ -20,7 +20,9 @@ addons:
       - cmake
       - valgrind
       - gcc-5
-
+    env:
+      - CXX=g++-5
+      - CC=gcc-5
 before_script:
   - gcc --version
   - python --version
