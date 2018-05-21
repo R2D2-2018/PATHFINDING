@@ -15,8 +15,7 @@ namespace Pathfinding {
     public:
         BestFirstSearch();
 
-        void setGraph(Graph& graphs) override;
-        Graph findPath(Node& begin, Node& end) override;
+        SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) override;
     };
 } // namespace Pathfinding
 

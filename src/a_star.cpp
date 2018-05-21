@@ -10,11 +10,7 @@
 namespace Pathfinding {
     AStar::AStar() { }
 
-    void AStar::setGraph(Graph& graph) {
-
-    }
-
-    Graph AStar::findPath(Node& begin, Node& end) {
-        return Graph();
+    PathfindingAlgorithm::SuccessState AStar::findPath(Node& begin, Node& end, Node** path, int len, int* travelled) {
+        return PathfindingAlgorithm::SuccessState::Success;
     }
 } // namespace Pathfinding

@@ -8,13 +8,17 @@
 #ifndef PATHFINDING_ALGORITHM_HPP
 #define PATHFINDING_ALGORITHM_HPP
 
-#include "graph.hpp"
+#include "node.hpp"
 
 namespace Pathfinding {
     class PathfindingAlgorithm {
     public:
-        virtual void setGraph(Graph& graph) = 0;
-        virtual Graph findPath(Node& begin, Node& end) = 0;
+        enum class SuccessState {
+            OutOfBounds,
+            Success
+        };
+
+        virtual SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) = 0;
     };
 } // namespace Pathfinding
 
