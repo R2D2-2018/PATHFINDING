@@ -11,12 +11,12 @@
 #include "pathfinding_algorithm.hpp"
 
 namespace Pathfinding {
-    class AStar : public PathfindingAlgorithm {
-    public:
-        AStar();
+class AStar : public PathfindingAlgorithm {
+  public:
+    AStar();
 
-        SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) override;
-    };
+    SuccessState findPath(Node &begin, Node &end, Node **path, int len, int *travelled) override;
+};
 } // namespace Pathfinding
 
 #endif // A_STAR_HPP

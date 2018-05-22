@@ -8,11 +8,10 @@
 #include "library_interface.hpp"
 
 namespace Pathfinding {
-    Graph LibraryInterface::findPath() const {
-        return Graph(nullptr, 0, nullptr, 0);
-    }
+Graph LibraryInterface::findPath() const {
+    return Graph(nullptr, 0, nullptr, 0);
+}
 
-    void LibraryInterface::setMap(Graph map) {
-
-    }
+void LibraryInterface::setMap(Graph map) {
+}
 } // namespace Pathfinding

@@ -8,9 +8,10 @@
 #include "best_first_search.hpp"
 
 namespace Pathfinding {
-    BestFirstSearch::BestFirstSearch() { }
+BestFirstSearch::BestFirstSearch() {
+}
 
-    PathfindingAlgorithm::SuccessState BestFirstSearch::findPath(Node& begin, Node& end, Node** path, int len, int* travelled) {
-        return PathfindingAlgorithm::SuccessState::Success;
-    }
+PathfindingAlgorithm::SuccessState BestFirstSearch::findPath(Node &begin, Node &end, Node **path, int len, int *travelled) {
+    return PathfindingAlgorithm::SuccessState::Success;
+}
 } // namespace Pathfinding

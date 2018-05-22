@@ -1,4 +1,4 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 #include "wrap-hwlib.hpp"
@@ -7,17 +7,9 @@
 
 TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     // Preconditions:
-    Pathfinding::Node nodes[9] = {
-        Pathfinding::Node(0),
-        Pathfinding::Node(1),
-        Pathfinding::Node(2),
-        Pathfinding::Node(3),
-        Pathfinding::Node(4),
-        Pathfinding::Node(5),
-        Pathfinding::Node(6),
-        Pathfinding::Node(7),
-        Pathfinding::Node(8)
-    };
+    Pathfinding::Node nodes[9] = {Pathfinding::Node(0), Pathfinding::Node(1), Pathfinding::Node(2),
+                                  Pathfinding::Node(3), Pathfinding::Node(4), Pathfinding::Node(5),
+                                  Pathfinding::Node(6), Pathfinding::Node(7), Pathfinding::Node(8)};
 
     //  0-1-2
     //  | | |
@@ -25,7 +17,7 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     //  | | |
     //  6-7-8
 
-    Pathfinding::Node* edges[] = {
+    Pathfinding::Node *edges[] = {
         &nodes[1], &nodes[3],                       // node 0
         &nodes[0], &nodes[2], &nodes[4],            // node 1
         &nodes[1], &nodes[5],                       // node 2
@@ -46,7 +38,7 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     nodes[6].setEdges(edges + 17, 2);
     nodes[7].setEdges(edges + 19, 3);
     nodes[8].setEdges(edges + 22, 2);
-    
+
     Pathfinding::Graph g = Pathfinding::Graph(nodes, 9, edges, 24);
     Pathfinding::BreadthFirstSearch bfs;
 
@@ -54,11 +46,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
 
     // Method Tested (void Pathfinding::Graph::findPath(Node& source, Node& dest, Node** path, int len, int* travelled)):
     SECTION("Node 0 to Node 8") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[8], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[8];
+        Pathfinding::Node *e = &nodes[8];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -68,11 +60,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     }
 
     SECTION("Node 0 to Node 7") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[7], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[7];
+        Pathfinding::Node *e = &nodes[7];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -82,11 +74,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     }
 
     SECTION("Node 0 to Node 6") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[6], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[6];
+        Pathfinding::Node *e = &nodes[6];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -96,11 +88,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     }
 
     SECTION("Node 0 to Node 5") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[5], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[5];
+        Pathfinding::Node *e = &nodes[5];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -110,11 +102,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     }
 
     SECTION("Node 0 to Node 4") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[4], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[4];
+        Pathfinding::Node *e = &nodes[4];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -124,11 +116,11 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
     }
 
     SECTION("Node 0 to Node 3") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[3], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[3];
+        Pathfinding::Node *e = &nodes[3];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -137,13 +129,12 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
         REQUIRE(e == &nodes[0]);
     }
 
-
     SECTION("Node 0 to Node 2") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[2], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[2];
+        Pathfinding::Node *e = &nodes[2];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -151,14 +142,13 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
 
         REQUIRE(e == &nodes[0]);
     }
-
 
     SECTION("Node 0 to Node 1") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[0], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[0];
+        Pathfinding::Node *e = &nodes[0];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -167,13 +157,12 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
         REQUIRE(e == &nodes[0]);
     }
 
-
     SECTION("Node 0 to Node 0") {
-        Pathfinding::Node* path[32];
+        Pathfinding::Node *path[32];
         int travelled;
         g.findPath(nodes[0], nodes[0], path, 32, &travelled);
 
-        Pathfinding::Node* e = &nodes[0];
+        Pathfinding::Node *e = &nodes[0];
 
         while (e->getParent() != nullptr) {
             e = e->getParent();
@@ -185,17 +174,9 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
 
 TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     // Preconditions:
-    Pathfinding::Node nodes[9] = {
-        Pathfinding::Node(0),
-        Pathfinding::Node(1),
-        Pathfinding::Node(2),
-        Pathfinding::Node(3),
-        Pathfinding::Node(4),
-        Pathfinding::Node(5),
-        Pathfinding::Node(6),
-        Pathfinding::Node(7),
-        Pathfinding::Node(8)
-    };
+    Pathfinding::Node nodes[9] = {Pathfinding::Node(0), Pathfinding::Node(1), Pathfinding::Node(2),
+                                  Pathfinding::Node(3), Pathfinding::Node(4), Pathfinding::Node(5),
+                                  Pathfinding::Node(6), Pathfinding::Node(7), Pathfinding::Node(8)};
 
     //  0-1-2
     //  | | |
@@ -203,7 +184,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     //  | | |
     //  6-7-8
 
-    Pathfinding::Node* edges[] = {
+    Pathfinding::Node *edges[] = {
         &nodes[1], &nodes[3],                       // node 0
         &nodes[0], &nodes[2], &nodes[4],            // node 1
         &nodes[1], &nodes[5],                       // node 2
@@ -224,10 +205,10 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     nodes[6].setEdges(edges + 17, 2);
     nodes[7].setEdges(edges + 19, 3);
     nodes[8].setEdges(edges + 22, 2);
-    
+
     // Method Tested (void Pathfinding::Node::getEdges(Pathfinding::Node*** edges, int* edgesCount) const):
     SECTION("nodes[0] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[0].getEdges(&edges, &edgesCount);
@@ -238,7 +219,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[1] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[1].getEdges(&edges, &edgesCount);
@@ -250,7 +231,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[2] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[2].getEdges(&edges, &edgesCount);
@@ -261,7 +242,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[3] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[3].getEdges(&edges, &edgesCount);
@@ -273,7 +254,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[4] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[4].getEdges(&edges, &edgesCount);
@@ -286,7 +267,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[5] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[5].getEdges(&edges, &edgesCount);
@@ -298,7 +279,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[6] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[6].getEdges(&edges, &edgesCount);
@@ -309,7 +290,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[7] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[7].getEdges(&edges, &edgesCount);
@@ -321,7 +302,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     }
 
     SECTION("nodes[8] connected accordingly") {
-        Pathfinding::Node** edges;
+        Pathfinding::Node **edges;
         int edgesCount;
 
         nodes[8].getEdges(&edges, &edgesCount);
@@ -331,4 +312,3 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[1] == &nodes[7]);
     }
 }
-

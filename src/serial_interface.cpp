@@ -8,15 +8,13 @@
 #include "serial_interface.hpp"
 
 namespace Pathfinding {
-    Graph SerialInterface::findPath() const {
-        return Graph(nullptr, 0, nullptr, 0);
-    }
+Graph SerialInterface::findPath() const {
+    return Graph(nullptr, 0, nullptr, 0);
+}
 
-    void SerialInterface::setMap(Graph map) {
+void SerialInterface::setMap(Graph map) {
+}
 
-    }
-
-    void SerialInterface::poll() {
-
-    }
+void SerialInterface::poll() {
+}
 } // namespace Pathfinding

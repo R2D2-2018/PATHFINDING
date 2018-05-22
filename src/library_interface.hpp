@@ -11,11 +11,11 @@
 #include "data_interface.hpp"
 
 namespace Pathfinding {
-    class LibraryInterface : public DataInterface {
-    public:
-        Graph findPath() const override;
-        void setMap(Graph map) override;
-    };
+class LibraryInterface : public DataInterface {
+  public:
+    Graph findPath() const override;
+    void setMap(Graph map) override;
+};
 } // namespace Pathfinding
 
 #endif // LIBRARY_INTERFACE_HPP

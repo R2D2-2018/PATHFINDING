@@ -11,12 +11,12 @@
 #include "pathfinding_algorithm.hpp"
 
 namespace Pathfinding {
-    class BestFirstSearch : public PathfindingAlgorithm {
-    public:
-        BestFirstSearch();
+class BestFirstSearch : public PathfindingAlgorithm {
+  public:
+    BestFirstSearch();
 
-        SuccessState findPath(Node& begin, Node& end, Node** path, int len, int* travelled) override;
-    };
+    SuccessState findPath(Node &begin, Node &end, Node **path, int len, int *travelled) override;
+};
 } // namespace Pathfinding
 
 #endif // BEST_FIRST_SEARCH_HPP

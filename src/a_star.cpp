@@ -8,9 +8,10 @@
 #include "a_star.hpp"
 
 namespace Pathfinding {
-    AStar::AStar() { }
+AStar::AStar() {
+}
 
-    PathfindingAlgorithm::SuccessState AStar::findPath(Node& begin, Node& end, Node** path, int len, int* travelled) {
-        return PathfindingAlgorithm::SuccessState::Success;
-    }
+PathfindingAlgorithm::SuccessState AStar::findPath(Node &begin, Node &end, Node **path, int len, int *travelled) {
+    return PathfindingAlgorithm::SuccessState::Success;
+}
 } // namespace Pathfinding

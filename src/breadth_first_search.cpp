@@ -9,44 +9,45 @@
 #include "queue.hpp"
 
 namespace Pathfinding {
-    BreadthFirstSearch::BreadthFirstSearch() { }
+BreadthFirstSearch::BreadthFirstSearch() {
+}
 
-    PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node& begin, Node& end, Node** path, int len, int* travelled) {
-        begin.setParent(nullptr);
-        *travelled = 0;
+PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Node &end, Node **path, int len, int *travelled) {
+    begin.setParent(nullptr);
+    *travelled = 0;
 
-        Node** edges;
-        int edgesCount;
-        
-        begin.getEdges(&edges, &edgesCount);
+    Node **edges;
+    int edgesCount;
 
-        queue<Node*, 32> q;
+    begin.getEdges(&edges, &edgesCount);
 
-        q.enqueue(&begin);
+    queue<Node *, 32> q;
 
-        while (!q.empty()) {
-            Node* n = q.dequeue();
+    q.enqueue(&begin);
 
-            n->setState(static_cast<int>(State::Visited));
+    while (!q.empty()) {
+        Node *n = q.dequeue();
 
-            if (n == &end) {
-                if (*travelled > len) {
-                    return PathfindingAlgorithm::SuccessState::OutOfBounds; // ought to restart path from last node with a larger array
-                }
-                
-                return PathfindingAlgorithm::SuccessState::Success; // path
+        n->setState(static_cast<int>(State::Visited));
+
+        if (n == &end) {
+            if (*travelled > len) {
+                return PathfindingAlgorithm::SuccessState::OutOfBounds; // ought to restart path from last node with a larger array
             }
 
-            n->getEdges(&edges, &edgesCount);
-
-            for (int i = 0; i < edgesCount; i++) {
-                if (edges[i]->getState() == static_cast<int>(State::NotVisited)) {
-                    edges[i]->setParent(n);
-                    q.enqueue(edges[i]);
-                }
-            }
+            return PathfindingAlgorithm::SuccessState::Success; // path
         }
 
-        return PathfindingAlgorithm::SuccessState::Success; // no path
+        n->getEdges(&edges, &edgesCount);
+
+        for (int i = 0; i < edgesCount; i++) {
+            if (edges[i]->getState() == static_cast<int>(State::NotVisited)) {
+                edges[i]->setParent(n);
+                q.enqueue(edges[i]);
+            }
+        }
     }
+
+    return PathfindingAlgorithm::SuccessState::Success; // no path
+}
 } // namespace Pathfinding

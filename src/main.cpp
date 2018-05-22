@@ -12,5 +12,4 @@
 #include "pathfinding.hpp"
 
 int main() {
-
 }
