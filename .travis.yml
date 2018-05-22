@@ -9,13 +9,13 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.6
+      - llvm-toolchain-precise-5.0
     packages:
       - cmake
       - valgrind
       - gcc-5
       - g++-5
-      - clang-format
+      - clang-format-5.0
 
 install:
   - sudo pip2 install lizard -q # Cyclomatic Complexity Check Tool
