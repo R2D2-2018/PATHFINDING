@@ -15,6 +15,7 @@ addons:
       - valgrind
       - gcc-5
       - g++-5
+      - clang-format
 
 install:
   - sudo pip2 install lizard -q # Cyclomatic Complexity Check Tool
