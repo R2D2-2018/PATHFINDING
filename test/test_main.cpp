@@ -207,7 +207,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     nodes[8].setEdges(edges + 22, 2);
 
     // Method Testing:
-    SECTION("nodes[0] connected accordingly") {
+    SECTION("nodes[0] connected to nodes[1] and nodes[3]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -218,7 +218,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[1] == &nodes[3]);
     }
 
-    SECTION("nodes[1] connected accordingly") {
+    SECTION("nodes[1] connected to nodes[0], nodes[2] and nodes[4]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -230,7 +230,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[2] == &nodes[4]);
     }
 
-    SECTION("nodes[2] connected accordingly") {
+    SECTION("nodes[2] connected to nodes[1] and nodes[5]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -241,7 +241,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[1] == &nodes[5]);
     }
 
-    SECTION("nodes[3] connected accordingly") {
+    SECTION("nodes[3] connected to nodes[0], nodes[4] and nodes[6]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -253,7 +253,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[2] == &nodes[6]);
     }
 
-    SECTION("nodes[4] connected accordingly") {
+    SECTION("nodes[4] connected to nodes[1], nodes[3], nodes[5] and nodes[7]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -266,7 +266,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[3] == &nodes[7]);
     }
 
-    SECTION("nodes[5] connected accordingly") {
+    SECTION("nodes[5] connected to nodes[2], nodes[4] and nodes[8]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -278,7 +278,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[2] == &nodes[8]);
     }
 
-    SECTION("nodes[6] connected accordingly") {
+    SECTION("nodes[6] connected to nodes[3] and nodes[7]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -289,7 +289,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[1] == &nodes[7]);
     }
 
-    SECTION("nodes[7] connected accordingly") {
+    SECTION("nodes[7] connected to nodes[4], nodes[6] and nodes[8]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
@@ -301,7 +301,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[2] == &nodes[8]);
     }
 
-    SECTION("nodes[8] connected accordingly") {
+    SECTION("nodes[8] connected to nodes[5] and nodes[7]") {
         Pathfinding::Node **edges;
         int edgesCount;
 
