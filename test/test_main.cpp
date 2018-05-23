@@ -44,7 +44,7 @@ TEST_CASE("Breadth First Search", "[pathfinding][algorithm]") {
 
     g.setAlgorithm(bfs);
 
-    // Method Tested (void Pathfinding::Graph::findPath(Node& source, Node& dest, Node** path, int len, int* travelled)):
+    // Method Testing:
     SECTION("Node 0 to Node 8") {
         Pathfinding::Node *path[32];
         int travelled;
@@ -206,7 +206,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     nodes[7].setEdges(edges + 19, 3);
     nodes[8].setEdges(edges + 22, 2);
 
-    // Method Tested (void Pathfinding::Node::getEdges(Pathfinding::Node*** edges, int* edgesCount) const):
+    // Method Testing:
     SECTION("nodes[0] connected accordingly") {
         Pathfinding::Node **edges;
         int edgesCount;
