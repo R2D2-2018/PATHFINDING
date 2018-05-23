@@ -7,12 +7,11 @@
 
 #include "best_first_search.hpp"
 
-BestFirstSearch::BestFirstSearch() { }
-
-void BestFirstSearch::setGraph() {
-
+namespace Pathfinding {
+BestFirstSearch::BestFirstSearch() {
 }
 
-Graph BestFirstSearch::findPath(Node& begin, Node& end) {
-    return Graph();
+PathfindingAlgorithm::SuccessState BestFirstSearch::findPath(Node &begin, Node &end, Node **path, int len, int *travelled) {
+    return PathfindingAlgorithm::SuccessState::Success;
 }
+} // namespace Pathfinding

@@ -7,26 +7,36 @@
 
 #include "node.hpp"
 
-Node::Node(int id) : id(id) { }
+namespace Pathfinding {
+Node::Node(int id) : id(id) {
+}
 
-Node::Node(const Node& node) :
-    id(node.id),
-    edges(node.edges),
-    edgesCount(node.edgesCount)
-{ }
+Node::Node(int id, Node **edges, int edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {
+}
 
-Node::Node(int id, Node** edges, int edgesCount) :
-    id(id),
-    edges(edges),
-    edgesCount(edgesCount)
-{ }
-
-void Node::getEdges(Node*** edges, int* edgesCount) const {
+void Node::getEdges(Node ***edges, int *edgesCount) const {
     *edges = this->edges;
     *edgesCount = this->edgesCount;
 }
 
-void Node::setEdges(Node** edges, int edgesCount) {
+void Node::setEdges(Node **edges, int edgesCount) {
     this->edges = edges;
     this->edgesCount = edgesCount;
 }
+
+int Node::getState() const {
+    return this->state;
+}
+
+void Node::setState(int state) {
+    this->state = state;
+}
+
+Node *Node::getParent() const {
+    return this->parent;
+}
+
+void Node::setParent(Node *parent) {
+    this->parent = parent;
+}
+} // namespace Pathfinding

@@ -10,10 +10,12 @@
 
 #include "graph.hpp"
 
+namespace Pathfinding {
 class DataInterface {
-public:
+  public:
     virtual Graph findPath() const = 0;
     virtual void setMap(Graph map) = 0;
 };
+} // namespace Pathfinding
 
 #endif // DATA_INTERFACE_HPP

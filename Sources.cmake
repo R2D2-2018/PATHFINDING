@@ -11,7 +11,12 @@ include_directories (${catch}/single_include)
 # Source Files:
 
 set (sources
-    src/wrap-hwlib.cpp
     src/libc-stub.cpp
-    src/main.cpp
+    src/a_star.cpp
+    src/best_first_search.cpp
+    src/breadth_first_search.cpp
+    src/graph.cpp
+    src/library_interface.cpp
+    src/node.cpp
+    src/serial_interface.cpp
 )
