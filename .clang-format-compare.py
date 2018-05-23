@@ -46,12 +46,11 @@ def main():
         for dir in unformattedFiles:
             print(dir)
 
-        if len(unformattedFiles) > 0:
-            exit(1)
-    else:
-        print("All source files are clang-formatted!")
+        exit(1)
 
-        exit(0)
+    print("All source files are clang-formatted!")
+
+    exit(0)
 
 if __name__ == "__main__":
     main()
