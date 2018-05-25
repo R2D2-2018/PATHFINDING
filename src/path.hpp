@@ -1,8 +1,6 @@
 #ifndef PATH_HPP
 #define PATH_HPP
 
-class Path {
-
-};
+class Path {};
 
 #endif // PATH_HPP

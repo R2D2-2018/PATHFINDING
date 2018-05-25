@@ -12,7 +12,8 @@ namespace Pathfinding {
 BreadthFirstSearch::BreadthFirstSearch() {
 }
 
-PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) {
+PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Node &end, Node **path, uint32_t len,
+                                                                uint32_t *travelled) {
     begin.setParent(nullptr);
     *travelled = 0;
 

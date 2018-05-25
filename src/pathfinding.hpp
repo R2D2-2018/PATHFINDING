@@ -20,7 +20,7 @@
 namespace Pathfinding {
 extern Node nodes[9];
 extern Node *edges[24];
-extern PathfindingAlgorithm* algorithms[1];
+extern PathfindingAlgorithm *algorithms[1];
 
 Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId);
 bool addNode(NodeId nodeId);
