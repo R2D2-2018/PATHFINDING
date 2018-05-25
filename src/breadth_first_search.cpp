@@ -12,12 +12,12 @@ namespace Pathfinding {
 BreadthFirstSearch::BreadthFirstSearch() {
 }
 
-PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Node &end, Node **path, int len, int *travelled) {
+PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) {
     begin.setParent(nullptr);
     *travelled = 0;
 
     Node **edges;
-    int edgesCount;
+    uint32_t edgesCount;
 
     begin.getEdges(&edges, &edgesCount);
 
@@ -28,7 +28,7 @@ PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Nod
     while (!q.empty()) {
         Node *n = q.dequeue();
 
-        n->setState(static_cast<int>(State::Visited));
+        n->setState(static_cast<uint32_t>(State::Visited));
 
         if (n == &end) {
             if (*travelled > len) {
@@ -40,8 +40,8 @@ PathfindingAlgorithm::SuccessState BreadthFirstSearch::findPath(Node &begin, Nod
 
         n->getEdges(&edges, &edgesCount);
 
-        for (int i = 0; i < edgesCount; i++) {
-            if (edges[i]->getState() == static_cast<int>(State::NotVisited)) {
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i]->getState() == static_cast<uint32_t>(State::NotVisited)) {
                 edges[i]->setParent(n);
                 q.enqueue(edges[i]);
             }

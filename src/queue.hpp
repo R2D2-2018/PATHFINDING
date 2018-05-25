@@ -8,6 +8,8 @@
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
+#include <stdint.h>
+
 namespace Pathfinding {
 /**
  * @brief Simple queue class
@@ -15,13 +17,13 @@ namespace Pathfinding {
  * @tparam T Type of the elements placed in this queue
  * @tparam L Length of this queue
  */
-template <class T, int L>
+template <class T, uint32_t L>
 class queue {
   private:
     T elements[L];
     T *head;
     T *tail;
-    int elementCount;
+    uint32_t elementCount;
 
   public:
     /**
