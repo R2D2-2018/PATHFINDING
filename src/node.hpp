@@ -15,10 +15,10 @@ using NodeId = uint32_t;
 
 class Node {
   private:
-    int id;
+    uint32_t id;
     Node **edges;
-    int edgesCount;
-    int state;
+    uint32_t edgesCount;
+    uint32_t state;
     Node *parent;
 
   public:
