@@ -12,6 +12,8 @@
 #include <stdint.h>
 
 namespace Pathfinding {
+using AlgorithmId = uint32_t;
+
 class PathfindingAlgorithm {
   public:
     enum class SuccessState {
