@@ -8,13 +8,31 @@
 #include "serial_interface.hpp"
 
 namespace Pathfinding {
-Graph SerialInterface::findPath() const {
-    return Graph(nullptr, 0, nullptr, 0);
+Path SerialInterface::calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) {
+    return Path();
 }
 
-void SerialInterface::setMap(Graph map) {
+bool SerialInterface::addNode(NodeId nodeId) {
+    return true;
 }
 
-void SerialInterface::poll() {
+bool SerialInterface::removeNode(NodeId nodeid) {
+    return true;
+}
+
+bool SerialInterface::addEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool SerialInterface::removeEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool SerialInterface::addWeakEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool SerialInterface::removeWeakEdge(NodeId node0, NodeId node1) {
+    return true;
 }
 } // namespace Pathfinding
