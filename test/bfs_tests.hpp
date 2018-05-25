@@ -40,7 +40,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
     // Method Testing:
     SECTION("Node 0 to Node 1") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[1], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[1];
@@ -54,7 +54,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 1 to Node 3") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[1], nodes[3], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[3];
@@ -68,7 +68,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 2 to Node 5") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[2], nodes[5], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[5];
@@ -82,7 +82,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 3 to Node 7") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[3], nodes[7], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[7];
@@ -96,7 +96,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 4 to Node 0") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[4], nodes[0], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[0];
@@ -110,7 +110,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 5 to Node 2") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[5], nodes[2], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[2];
@@ -124,7 +124,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 6 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[6], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -138,7 +138,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 7 to Node 5") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[7], nodes[5], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[5];
@@ -152,7 +152,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 
     SECTION("Node 8 to Node 7") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[8], nodes[7], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[7];
@@ -207,7 +207,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
     // Method Testing:
     SECTION("Node 0 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -221,7 +221,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 1 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[1], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -235,7 +235,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 2 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[2], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -249,7 +249,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 3 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[3], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -263,7 +263,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 4 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[4], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -277,7 +277,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 5 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[5], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -291,7 +291,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 6 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[6], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -305,7 +305,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 7 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[7], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -319,7 +319,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 
     SECTION("Node 8 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[8], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -374,7 +374,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
     // Method Testing:
     SECTION("Node 0 to Node 8") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[8], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[8];
@@ -388,7 +388,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 7") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[7], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[7];
@@ -402,7 +402,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 6") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[6], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[6];
@@ -416,7 +416,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 5") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[5], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[5];
@@ -430,7 +430,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 4") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[4], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[4];
@@ -444,7 +444,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 3") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[3], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[3];
@@ -458,7 +458,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 2") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[2], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[2];
@@ -472,7 +472,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 1") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[0], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[0];
@@ -486,7 +486,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 
     SECTION("Node 0 to Node 0") {
         Pathfinding::Node *path[32];
-        int travelled;
+        uint32_t travelled;
         g.findPath(nodes[0], nodes[0], path, 32, &travelled);
 
         Pathfinding::Node *e = &nodes[0];
@@ -536,7 +536,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
     // Method Testing:
     SECTION("nodes[0] connected to nodes[1] and nodes[3]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[0].getEdges(&edges, &edgesCount);
 
@@ -547,7 +547,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[1] connected to nodes[0], nodes[2] and nodes[4]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[1].getEdges(&edges, &edgesCount);
 
@@ -559,7 +559,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[2] connected to nodes[1] and nodes[5]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[2].getEdges(&edges, &edgesCount);
 
@@ -570,7 +570,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[3] connected to nodes[0], nodes[4] and nodes[6]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[3].getEdges(&edges, &edgesCount);
 
@@ -582,7 +582,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[4] connected to nodes[1], nodes[3], nodes[5] and nodes[7]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[4].getEdges(&edges, &edgesCount);
 
@@ -595,7 +595,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[5] connected to nodes[2], nodes[4] and nodes[8]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[5].getEdges(&edges, &edgesCount);
 
@@ -607,7 +607,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[6] connected to nodes[3] and nodes[7]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[6].getEdges(&edges, &edgesCount);
 
@@ -618,7 +618,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[7] connected to nodes[4], nodes[6] and nodes[8]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[7].getEdges(&edges, &edgesCount);
 
@@ -630,7 +630,7 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
 
     SECTION("nodes[8] connected to nodes[5] and nodes[7]") {
         Pathfinding::Node **edges;
-        int edgesCount;
+        uint32_t edgesCount;
 
         nodes[8].getEdges(&edges, &edgesCount);
 
