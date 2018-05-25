@@ -15,6 +15,7 @@
 #include "graph.hpp"
 #include "library_interface.hpp"
 #include "node.hpp"
+#include "path.hpp"
 #include "pathfinding_algorithm.hpp"
 #include "queue.hpp"
 #include "serial_interface.hpp"

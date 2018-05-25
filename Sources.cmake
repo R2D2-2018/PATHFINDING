@@ -18,5 +18,6 @@ set (sources
     src/graph.cpp
     src/library_interface.cpp
     src/node.cpp
+    src/path.cpp
     src/serial_interface.cpp
 )
