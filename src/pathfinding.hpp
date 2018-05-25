@@ -11,13 +11,24 @@
 #include "a_star.hpp"
 #include "best_first_search.hpp"
 #include "breadth_first_search.hpp"
-#include "data_interface.hpp"
 #include "graph.hpp"
-#include "library_interface.hpp"
 #include "node.hpp"
 #include "path.hpp"
 #include "pathfinding_algorithm.hpp"
 #include "queue.hpp"
-#include "serial_interface.hpp"
+
+namespace Pathfinding {
+extern Node nodes[9];
+extern Node *edges[24];
+extern PathfindingAlgorithm* algorithms[1];
+
+Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId);
+bool addNode(NodeId nodeId);
+bool removeNode(NodeId nodeid);
+bool addEdge(NodeId node0, NodeId node1);
+bool removeEdge(NodeId node0, NodeId node1);
+bool addWeakEdge(NodeId node0, NodeId node1);
+bool removeWeakEdge(NodeId node0, NodeId node1);
+} // namespace Pathfinding
 
 #endif // PATHFINDING_HPP

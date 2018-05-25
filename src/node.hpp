@@ -23,6 +23,11 @@ class Node {
 
   public:
     /**
+     * @brief Empty constructor
+     */
+    Node();
+
+    /**
      * @brief Construct a new Node object with the given id
      *
      * @param id Id of the constructed node

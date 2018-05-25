@@ -8,6 +8,9 @@
 #include "node.hpp"
 
 namespace Pathfinding {
+Node::Node() {
+}
+
 Node::Node(uint32_t id) : id(id) {
 }
 
