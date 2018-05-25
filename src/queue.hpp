@@ -66,6 +66,8 @@ class queue {
             }
 
             return v;
+        } else {
+            return nullptr;
         }
     }
 
