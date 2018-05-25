@@ -13,8 +13,13 @@
 namespace Pathfinding {
 class LibraryInterface : public DataInterface {
   public:
-    Graph findPath() const override;
-    void setMap(Graph map) override;
+    Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) override;
+    bool addNode(NodeId nodeId) override;
+    bool removeNode(NodeId nodeid) override;
+    bool addEdge(NodeId node0, NodeId node1) override;
+    bool removeEdge(NodeId node0, NodeId node1) override;
+    bool addWeakEdge(NodeId node0, NodeId node1) override;
+    bool removeWeakEdge(NodeId node0, NodeId node1) override;
 };
 } // namespace Pathfinding
 

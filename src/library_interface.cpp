@@ -8,10 +8,31 @@
 #include "library_interface.hpp"
 
 namespace Pathfinding {
-Graph LibraryInterface::findPath() const {
-    return Graph(nullptr, 0, nullptr, 0);
+Path LibraryInterface::calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) {
+    return Path();
 }
 
-void LibraryInterface::setMap(Graph map) {
+bool LibraryInterface::addNode(NodeId nodeId) {
+    return true;
+}
+
+bool LibraryInterface::removeNode(NodeId nodeid) {
+    return true;
+}
+
+bool LibraryInterface::addEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool LibraryInterface::removeEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool LibraryInterface::addWeakEdge(NodeId node0, NodeId node1) {
+    return true;
+}
+
+bool LibraryInterface::removeWeakEdge(NodeId node0, NodeId node1) {
+    return true;
 }
 } // namespace Pathfinding
