@@ -1,4 +1,11 @@
 /**
+ * @file      bfs_tests.hpp
+ * @brief     Pathfinding breadth first search algorithm test cases
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
+/**
  * @brief Breadth First Search Varying Source and Destination Test Case
  * 
  * @details
