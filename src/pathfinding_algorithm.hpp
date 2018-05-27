@@ -9,8 +9,11 @@
 #define PATHFINDING_ALGORITHM_HPP
 
 #include "node.hpp"
+#include <stdint.h>
 
 namespace Pathfinding {
+using AlgorithmId = uint32_t;
+
 class PathfindingAlgorithm {
   public:
     enum class SuccessState {
@@ -34,7 +37,7 @@ class PathfindingAlgorithm {
      * @param[out] travelled Calculated path length
      * @return SuccessState State of the previous Calculated path
      */
-    virtual SuccessState findPath(Node &begin, Node &end, Node **path, int len, int *travelled) = 0;
+    virtual SuccessState findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) = 0;
 };
 } // namespace Pathfinding
 

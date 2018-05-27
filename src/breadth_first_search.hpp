@@ -10,6 +10,7 @@
 
 #include "graph.hpp"
 #include "pathfinding_algorithm.hpp"
+#include <stdint.h>
 
 namespace Pathfinding {
 class BreadthFirstSearch : public PathfindingAlgorithm {
@@ -40,7 +41,7 @@ class BreadthFirstSearch : public PathfindingAlgorithm {
      * @param[out] travelled Calculated path length
      * @return SuccessState State of the previous Calculated path
      */
-    SuccessState findPath(Node &begin, Node &end, Node **path, int len, int *travelled) override;
+    SuccessState findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) override;
 };
 } // namespace Pathfinding
 

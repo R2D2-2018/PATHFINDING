@@ -8,27 +8,30 @@
 #include "node.hpp"
 
 namespace Pathfinding {
-Node::Node(int id) : id(id) {
+Node::Node() {
 }
 
-Node::Node(int id, Node **edges, int edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {
+Node::Node(uint32_t id) : id(id) {
 }
 
-void Node::getEdges(Node ***edges, int *edgesCount) const {
+Node::Node(uint32_t id, Node **edges, uint32_t edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {
+}
+
+void Node::getEdges(Node ***edges, uint32_t *edgesCount) const {
     *edges = this->edges;
     *edgesCount = this->edgesCount;
 }
 
-void Node::setEdges(Node **edges, int edgesCount) {
+void Node::setEdges(Node **edges, uint32_t edgesCount) {
     this->edges = edges;
     this->edgesCount = edgesCount;
 }
 
-int Node::getState() const {
+uint32_t Node::getState() const {
     return this->state;
 }
 
-void Node::setState(int state) {
+void Node::setState(uint32_t state) {
     this->state = state;
 }
 

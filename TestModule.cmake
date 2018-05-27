@@ -6,6 +6,7 @@ include_directories (src/)
 
 set (sources ${sources}
     ${unit_test_main}
+    src/wrap-hwlib.cpp
 )
 
 set (build_test build_test)

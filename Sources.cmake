@@ -16,7 +16,7 @@ set (sources
     src/best_first_search.cpp
     src/breadth_first_search.cpp
     src/graph.cpp
-    src/library_interface.cpp
     src/node.cpp
-    src/serial_interface.cpp
+    src/path.cpp
+    src/pathfinding.cpp
 )
