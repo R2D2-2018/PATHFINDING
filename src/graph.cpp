@@ -10,8 +10,7 @@
 #include <iostream>
 
 namespace Pathfinding {
-Graph::Graph(Node *nodes, uint32_t nodeCount, Node **cumulativeEdges, uint32_t cumulativeEdgesCount)
-    : nodes(nodes), nodeCount(nodeCount), cumulativeEdges(cumulativeEdges), cumulativeEdgesCount(cumulativeEdgesCount) {
+Graph::Graph(Node *nodes, uint32_t nodeCount) : nodes(nodes), nodeCount(nodeCount) {
 }
 
 void Graph::getNodes(Node **nodes, uint32_t *len) {

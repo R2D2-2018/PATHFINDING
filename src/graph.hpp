@@ -17,8 +17,6 @@ class Graph {
   private:
     Node *nodes;
     uint32_t nodeCount;
-    Node **cumulativeEdges; // all edges combined
-    uint32_t cumulativeEdgesCount;
     PathfindingAlgorithm *alg;
 
   public:
@@ -34,7 +32,7 @@ class Graph {
      * @param[in] cumulativeEdges Array of all edges in this graph.
      * @param[in] cumulativeEdgesCount Count of all edges in this graph.
      */
-    Graph(Node *nodes, uint32_t nodeCount, Node **cumulativeEdges, uint32_t cumulativeEdgesCount);
+    Graph(Node *nodes, uint32_t nodeCount);
 
     /**
      * @brief Replaces the pointers given with pointers pointing towards Node* Graph::nodes and its length
