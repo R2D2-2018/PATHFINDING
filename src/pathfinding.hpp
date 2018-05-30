@@ -13,14 +13,22 @@
 #include "breadth_first_search.hpp"
 #include "graph.hpp"
 #include "node.hpp"
+#include "object_pool.hpp"
 #include "path.hpp"
 #include "pathfinding_algorithm.hpp"
 #include "queue.hpp"
 
 namespace Pathfinding {
-extern Node nodes[9];
-extern Node *edges[24];
-extern PathfindingAlgorithm *algorithms[1];
+constexpr const uint32_t nodesLen = 9;
+constexpr const uint32_t edgesLen = 4096;
+constexpr const uint32_t algorithmsLen = 1;
+extern Node nodes[nodesLen];
+extern ObjectPool<Node *, edgesLen> edgePool;
+extern PathfindingAlgorithm *algorithms[algorithmsLen];
+
+#ifdef BMPTK_TARGET_test
+Node *getDebugNodes();
+#endif
 
 /**
  * @brief Finds a path from source to destination using the given algorithm.
