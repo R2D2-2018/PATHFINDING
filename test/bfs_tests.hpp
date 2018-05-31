@@ -5,6 +5,13 @@
  * @license   See LICENSE
  */
 
+#ifndef BFS_TESTS_HPP
+#define BFS_TESTS_HPP
+
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+#include "pathfinding.hpp"
+
 /**
  * @brief Breadth First Search Varying Source and Destination Test Case
  *
@@ -679,3 +686,5 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(edges[1] == &nodes[7]);
     }
 }
+
+#endif // BFS_TESTS_HPP
