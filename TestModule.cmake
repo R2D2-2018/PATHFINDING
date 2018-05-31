@@ -34,7 +34,7 @@ add_test (
 endif (build_test_enabled)
 
 if (unit_test_enabled)
-add_executable (${unit_test} ${unit_test_main} ${sources})
+add_executable (${unit_test} ${sources})
 
 add_test (
 	NAME ${unit_test}
