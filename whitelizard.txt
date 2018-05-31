@@ -1,0 +1,4 @@
+# whitelizard.txt
+
+# Ignore TEST_CASE functions, since they can get really long...
+TEST_CASE
