@@ -59,7 +59,7 @@ bool addEdge(NodeId node0, NodeId node1) {
         node0Ptr->getEdges(&edges, &edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
 
-        for (int i = 0; i < edgesCount; i++) {
+        for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
         }
 
@@ -76,7 +76,7 @@ bool addEdge(NodeId node0, NodeId node1) {
         node1Ptr->getEdges(&edges, &edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
 
-        for (int i = 0; i < edgesCount; i++) {
+        for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
         }
 
