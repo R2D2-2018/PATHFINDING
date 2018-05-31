@@ -28,6 +28,8 @@ extern PathfindingAlgorithm *algorithms[algorithmsLen];
 
 #ifdef BMPTK_TARGET_test
 Node *getDebugNodes();
+
+void reset();
 #endif
 
 /**

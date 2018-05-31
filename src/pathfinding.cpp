@@ -16,6 +16,14 @@ PathfindingAlgorithm *algorithms[] = {
 Node *getDebugNodes() {
     return nodes;
 }
+
+void reset() {
+    for (uint32_t i = 0; i < nodesLen; i++) {
+        nodes[i] = Pathfinding::Node(i);
+    }
+
+    edgePool = ObjectPool<Node *, edgesLen>();
+}
 #endif
 
 Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) {
