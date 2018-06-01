@@ -37,7 +37,7 @@ class PathfindingAlgorithm {
      * @param[out] travelled Calculated path length
      * @return SuccessState State of the previous Calculated path
      */
-    virtual SuccessState findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) = 0;
+    virtual SuccessState findPath(Node &begin, Node &end, Node **const &path, uint32_t len, uint32_t &travelled) = 0;
 };
 } // namespace Pathfinding
 

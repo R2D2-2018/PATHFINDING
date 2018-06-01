@@ -14,15 +14,15 @@ Node::Node() {
 Node::Node(uint32_t id) : id(id) {
 }
 
-Node::Node(uint32_t id, Node **edges, uint32_t edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {
+Node::Node(uint32_t id, EdgeArray edges, uint32_t edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {
 }
 
-void Node::getEdges(Node ***edges, uint32_t *edgesCount) const {
-    *edges = this->edges;
-    *edgesCount = this->edgesCount;
+void Node::getEdges(EdgeArray &edges, uint32_t &edgesCount) const {
+    edges = this->edges;
+    edgesCount = this->edgesCount;
 }
 
-void Node::setEdges(Node **edges, uint32_t edgesCount) {
+void Node::setEdges(EdgeArray edges, uint32_t edgesCount) {
     this->edges = edges;
     this->edgesCount = edgesCount;
 }
@@ -35,11 +35,15 @@ void Node::setState(uint32_t state) {
     this->state = state;
 }
 
-Node *Node::getParent() const {
-    return this->parent;
+Node &Node::getParent() const {
+    return *this->parent;
 }
 
-void Node::setParent(Node *parent) {
-    this->parent = parent;
+void Node::setParent(Node &parent) {
+    this->parent = &parent;
+}
+
+void Node::setParent(std::nullptr_t parent) {
+    this->parent = nullptr;
 }
 } // namespace Pathfinding

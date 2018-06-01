@@ -11,8 +11,8 @@ namespace Pathfinding {
 BestFirstSearch::BestFirstSearch() {
 }
 
-PathfindingAlgorithm::SuccessState BestFirstSearch::findPath(Node &begin, Node &end, Node **path, uint32_t len,
-                                                             uint32_t *travelled) {
+PathfindingAlgorithm::SuccessState BestFirstSearch::findPath(Node &begin, Node &end, Node **const &path, uint32_t len,
+                                                             uint32_t &ravelled) {
     return PathfindingAlgorithm::SuccessState::Success;
 }
 } // namespace Pathfinding

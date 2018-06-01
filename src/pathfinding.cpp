@@ -6,7 +6,7 @@ namespace Pathfinding {
 Node nodes[] = {Pathfinding::Node(0), Pathfinding::Node(1), Pathfinding::Node(2), Pathfinding::Node(3), Pathfinding::Node(4),
                 Pathfinding::Node(5), Pathfinding::Node(6), Pathfinding::Node(7), Pathfinding::Node(8)};
 
-Node *edges[] = {
+Edge edges[] = {
     &nodes[1], &nodes[3],                       // node 0
     &nodes[0], &nodes[2], &nodes[4],            // node 1
     &nodes[1], &nodes[5],                       // node 2
@@ -44,13 +44,13 @@ Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) {
 
     Node *path[32];
 
-    g.findPath(nodes[source], nodes[dest], path, 32, &travelled);
+    g.findPath(nodes[source], nodes[dest], path, 32, travelled);
 
-    Pathfinding::Node *e = &nodes[dest];
+    Pathfinding::Node &e = nodes[dest];
 
-    while (e->getParent() != nullptr) {
-        std::cout << *e << std::endl;
-        e = e->getParent();
+    while (e.getParent() != nullptr) {
+        std::cout << e << std::endl;
+        e = e.getParent();
     }
 
     return Path();

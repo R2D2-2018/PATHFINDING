@@ -10,13 +10,13 @@
 #include <iostream>
 
 namespace Pathfinding {
-Graph::Graph(Node *nodes, uint32_t nodeCount, Node **cumulativeEdges, uint32_t cumulativeEdgesCount)
+Graph::Graph(NodeArray nodes, uint32_t nodeCount, EdgeArray cumulativeEdges, uint32_t cumulativeEdgesCount)
     : nodes(nodes), nodeCount(nodeCount), cumulativeEdges(cumulativeEdges), cumulativeEdgesCount(cumulativeEdgesCount) {
 }
 
-void Graph::getNodes(Node **nodes, uint32_t *len) {
-    *nodes = this->nodes;
-    *len = this->nodeCount;
+void Graph::getNodes(NodeArray &nodes, uint32_t &len) {
+    nodes = this->nodes;
+    len = this->nodeCount;
 }
 
 Node *Graph::getNodes() {
@@ -38,7 +38,8 @@ void Graph::reset() {
     }
 }
 
-PathfindingAlgorithm::SuccessState Graph::findPath(Node &source, Node &dest, Node **path, uint32_t len, uint32_t *travelled) {
+PathfindingAlgorithm::SuccessState Graph::findPath(Node &source, Node &dest, Node **const &path, uint32_t len,
+                                                   uint32_t &travelled) {
     reset();
     return alg->findPath(source, dest, path, len, travelled);
 }

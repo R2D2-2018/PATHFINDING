@@ -16,7 +16,7 @@ class AStar : public PathfindingAlgorithm {
   public:
     AStar();
 
-    SuccessState findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) override;
+    SuccessState findPath(Node &begin, Node &end, Node **const &path, uint32_t len, uint32_t &travelled) override;
 };
 } // namespace Pathfinding
 

@@ -19,7 +19,7 @@
 
 namespace Pathfinding {
 extern Node nodes[9];
-extern Node *edges[24];
+extern Edge edges[24];
 extern PathfindingAlgorithm *algorithms[1];
 
 /**
