@@ -15,7 +15,7 @@
 namespace Pathfinding {
 class Graph {
   private:
-    Node *nodes;
+    NodeArray nodes;
     uint32_t nodeCount;
     PathfindingAlgorithm *alg;
 
@@ -32,7 +32,7 @@ class Graph {
      * @param[in] cumulativeEdges Array of all edges in this graph.
      * @param[in] cumulativeEdgesCount Count of all edges in this graph.
      */
-    Graph(Node *nodes, uint32_t nodeCount);
+    Graph(NodeArray nodes, uint32_t nodeCount);
 
     /**
      * @brief Replaces the pointers given with pointers pointing towards Node* Graph::nodes and its length
@@ -40,14 +40,14 @@ class Graph {
      * @param[out] nodes Nodes array pointer to write to
      * @param[out] len Length of the nodes array
      */
-    void getNodes(Node **nodes, uint32_t *len);
+    void getNodes(NodeArray &nodes, uint32_t &len);
 
     /**
      * @brief Returns a pointer to the first node in Node* Graph::nodes
      *
      * @return Node* First node in Node* Graph::nodes
      */
-    Node *getNodes();
+    NodeArray getNodes();
 
     /**
      * @brief Sets the given algorithm to use for pathfinding
@@ -76,7 +76,7 @@ class Graph {
      * @param[out] travelled Length of the physical path
      * @return PathfindingAlgorithm::SuccessState
      */
-    PathfindingAlgorithm::SuccessState findPath(Node &source, Node &dest, Node **path, uint32_t len, uint32_t *travelled);
+    PathfindingAlgorithm::SuccessState findPath(Node &source, Node &dest, Node **const &path, uint32_t len, uint32_t &travelled);
 
     template <class T>
     friend T &operator<<(T &os, const Graph &n) {

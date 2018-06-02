@@ -23,7 +23,7 @@ constexpr const uint32_t nodesLen = 9;
 constexpr const uint32_t edgesLen = 4096;
 constexpr const uint32_t algorithmsLen = 1;
 extern Node nodes[nodesLen];
-extern ObjectPool<Node *, edgesLen> edgePool;
+extern ObjectPool<NodeArray, edgesLen> edgePool;
 extern PathfindingAlgorithm *algorithms[algorithmsLen];
 
 #ifdef BMPTK_TARGET_test

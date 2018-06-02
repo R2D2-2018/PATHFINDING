@@ -97,7 +97,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[0].getEdges(&edges, &edgesCount);
+        nodes[0].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[1] && connected == false) {
@@ -117,7 +117,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[0].getEdges(&edges, &edgesCount);
+        nodes[0].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[3] && connected == false) {
@@ -137,7 +137,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[1].getEdges(&edges, &edgesCount);
+        nodes[1].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[2] && connected == false) {
@@ -157,7 +157,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[1].getEdges(&edges, &edgesCount);
+        nodes[1].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[4] && connected == false) {
@@ -177,7 +177,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[2].getEdges(&edges, &edgesCount);
+        nodes[2].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[5] && connected == false) {
@@ -197,7 +197,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[3].getEdges(&edges, &edgesCount);
+        nodes[3].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[4] && connected == false) {
@@ -217,7 +217,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[3].getEdges(&edges, &edgesCount);
+        nodes[3].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[6] && connected == false) {
@@ -237,7 +237,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[4].getEdges(&edges, &edgesCount);
+        nodes[4].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[5] && connected == false) {
@@ -257,7 +257,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[4].getEdges(&edges, &edgesCount);
+        nodes[4].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[7] && connected == false) {
@@ -277,7 +277,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[5].getEdges(&edges, &edgesCount);
+        nodes[5].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[8] && connected == false) {
@@ -297,7 +297,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[6].getEdges(&edges, &edgesCount);
+        nodes[6].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[7] && connected == false) {
@@ -317,7 +317,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
         Pathfinding::Node **edges;
         uint32_t edgesCount;
-        nodes[7].getEdges(&edges, &edgesCount);
+        nodes[7].getEdges(edges, edgesCount);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             if (edges[i] == &nodes[8] && connected == false) {

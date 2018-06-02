@@ -4,7 +4,7 @@ namespace Pathfinding {
 Node nodes[] = {Pathfinding::Node(0), Pathfinding::Node(1), Pathfinding::Node(2), Pathfinding::Node(3), Pathfinding::Node(4),
                 Pathfinding::Node(5), Pathfinding::Node(6), Pathfinding::Node(7), Pathfinding::Node(8)};
 
-ObjectPool<Node *, edgesLen> edgePool = {};
+ObjectPool<NodeArray, edgesLen> edgePool = {};
 
 BreadthFirstSearch breadthFirstSearch;
 
@@ -36,13 +36,13 @@ Path calculatePath(NodeId source, NodeId dest, AlgorithmId algorithmId) {
 
     Node *path[32];
 
-    g.findPath(nodes[source], nodes[dest], path, 32, &travelled);
+    g.findPath(nodes[source], nodes[dest], path, 32, travelled);
 
-    Pathfinding::Node *e = &nodes[dest];
+    Pathfinding::Node &e = nodes[dest];
 
-    while (e->getParent() != nullptr) {
-        std::cout << *e << std::endl;
-        e = e->getParent();
+    while (e.getParent() != nullptr) {
+        std::cout << e << std::endl;
+        e = e.getParent();
     }
 
     return Path();
@@ -56,24 +56,24 @@ bool removeNode(NodeId nodeid) {
     return true;
 }
 
-bool addEdge(NodeId node0, NodeId node1) {
-    Node *node0Ptr = &nodes[node0];
-    Node *node1Ptr = &nodes[node1];
+bool addEdge(NodeId node0Id, NodeId node1Id) {
+    Node &node0 = nodes[node0Id];
+    Node &node1 = nodes[node1Id];
 
-    Node **edges;
+    EdgeArray edges;
     uint32_t edgesCount;
 
     {
-        node0Ptr->getEdges(&edges, &edgesCount);
+        node0.getEdges(edges, edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
         }
 
-        newEdges[edgesCount] = node1Ptr;
+        newEdges[edgesCount] = &node1;
 
-        node0Ptr->setEdges(newEdges, edgesCount + 1);
+        node0.setEdges(newEdges, edgesCount + 1);
 
         if (edges != nullptr) {
             edgePool.deallocateBlocks(edges);
@@ -81,16 +81,16 @@ bool addEdge(NodeId node0, NodeId node1) {
     }
 
     {
-        node1Ptr->getEdges(&edges, &edgesCount);
+        node1.getEdges(edges, edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
         }
 
-        newEdges[edgesCount] = node0Ptr;
+        newEdges[edgesCount] = &node0;
 
-        node1Ptr->setEdges(newEdges, edgesCount + 1);
+        node1.setEdges(newEdges, edgesCount + 1);
 
         if (edges != nullptr) {
             edgePool.deallocateBlocks(edges);

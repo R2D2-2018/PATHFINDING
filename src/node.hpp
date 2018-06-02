@@ -8,18 +8,24 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
+#include <iostream>
+
+#include <cstddef>
 #include <stdint.h>
 
 namespace Pathfinding {
 using NodeId = uint32_t;
+using Edge = class Node *;
+using NodeArray = class Node *;
+using EdgeArray = Edge *;
 
 class Node {
   private:
     int32_t id;
-    Node **edges;
+    EdgeArray edges;
     uint32_t edgesCount;
     uint32_t state;
-    Node *parent;
+    Edge parent;
 
   public:
     /**
@@ -41,7 +47,7 @@ class Node {
      * @param edges Edges array to use for this node
      * @param edgesCount Amount of edges this node has
      */
-    Node(int32_t id, Node **edges, uint32_t edgesCount);
+    Node(int32_t id, EdgeArray edges, uint32_t edgesCount);
 
     /**
      * @brief Returns the Id of this node as set by the constructor
@@ -56,7 +62,7 @@ class Node {
      * @param[out] edges Edges array pointer to change its value to Node** Node::edges
      * @param[out] edgesCount Integer pointer to change its value to the length of Node** Node::edges
      */
-    void getEdges(class Node ***edges, uint32_t *edgesCount) const;
+    void getEdges(EdgeArray &edges, uint32_t &edgesCount) const;
 
     /**
      * @brief Sets the edges array of this Node
@@ -64,7 +70,7 @@ class Node {
      * @param[in] edges Edges array to useas reference
      * @param[in] edgesCount Amount of edges the edges array has
      */
-    void setEdges(class Node **edges, uint32_t edgesCount);
+    void setEdges(EdgeArray edges, uint32_t edgesCount);
 
     /**
      * @brief Returns int Node::state
@@ -85,18 +91,41 @@ class Node {
      *
      * @return Node* Parent of this node
      */
-    Node *getParent() const;
+    Node &getParent() const;
 
     /**
      * @brief Set the parent of this node
      *
      * @param parent Parent of this node
      */
-    void setParent(Node *parent);
+    void setParent(Node &parent);
+
+    /**
+     * @brief Set the parent of this node
+     *
+     * @param parent Parent of this node
+     */
+    void setParent(std::nullptr_t parent);
 
     template <class T>
     friend T &operator<<(T &os, const Node &n) {
         return os << "Node " << n.id;
+    }
+
+    bool operator==(const Node &n) const {
+        return this == &n;
+    }
+
+    bool operator!=(const Node &n) const {
+        return !(this == &n);
+    }
+
+    bool operator==(nullptr_t n) const {
+        return this == n;
+    }
+
+    bool operator!=(nullptr_t n) const {
+        return !(this == n);
     }
 };
 } // namespace Pathfinding

@@ -11,7 +11,7 @@ namespace Pathfinding {
 AStar::AStar() {
 }
 
-PathfindingAlgorithm::SuccessState AStar::findPath(Node &begin, Node &end, Node **path, uint32_t len, uint32_t *travelled) {
+PathfindingAlgorithm::SuccessState AStar::findPath(Node &begin, Node &end, Node **const &path, uint32_t len, uint32_t &travelled) {
     return PathfindingAlgorithm::SuccessState::Success;
 }
 } // namespace Pathfinding
