@@ -67,6 +67,10 @@ bool addEdge(NodeId node0Id, NodeId node1Id) {
         node0.getEdges(edges, edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
 
+        if (newEdges == nullptr) {
+            return false;
+        }
+
         for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
         }
@@ -83,6 +87,10 @@ bool addEdge(NodeId node0Id, NodeId node1Id) {
     {
         node1.getEdges(edges, edgesCount);
         Node **newEdges = edgePool.allocateBlocks(edgesCount + 1);
+
+        if (newEdges == nullptr) {
+            return false;
+        }
 
         for (uint32_t i = 0; i < edgesCount; i++) {
             newEdges[i] = edges[i];
