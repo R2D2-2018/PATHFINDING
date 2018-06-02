@@ -13,10 +13,9 @@
 #include <cstddef>
 #include <stdint.h>
 
-#include "edge.hpp"
-
 namespace Pathfinding {
 using NodeId = uint32_t;
+using Edge = class Node *;
 using NodeArray = class Node *;
 using EdgeArray = Edge *;
 
