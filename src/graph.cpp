@@ -7,10 +7,11 @@
 
 #include "graph.hpp"
 
-#include <iostream>
-
 namespace Pathfinding {
-Graph::Graph(NodeArray nodes, uint32_t nodeCount) : nodes(nodes), nodeCount(nodeCount) {
+Graph::Graph() : nodes(nullptr), nodeCount(0), alg(nullptr) {
+}
+
+Graph::Graph(NodeArray nodes, uint32_t nodeCount) : nodes(nodes), nodeCount(nodeCount), alg(nullptr) {
 }
 
 void Graph::getNodes(NodeArray &nodes, uint32_t &len) {
@@ -18,8 +19,28 @@ void Graph::getNodes(NodeArray &nodes, uint32_t &len) {
     len = this->nodeCount;
 }
 
+void Graph::setNodes(NodeArray nodes, uint32_t len) {
+    this->nodes = nodes;
+    this->nodeCount = len;
+}
+
 Node *Graph::getNodes() {
     return nodes;
+}
+
+Node &Graph::getNodeWithId(NodeId id) {
+    // quick lookup
+    if (id < nodeCount && nodes[id].getId() == id) {
+        return nodes[id];
+    }
+
+    // fallback
+    for (uint32_t i = 0; i < nodeCount; i++) {
+        std::cout << nodes[i] << std::endl;
+        if (nodes[i].getId() == id) {
+            return nodes[i];
+        }
+    }
 }
 
 void Graph::setAlgorithm(PathfindingAlgorithm &alg) {

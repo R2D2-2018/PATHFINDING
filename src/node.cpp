@@ -8,10 +8,10 @@
 #include "node.hpp"
 
 namespace Pathfinding {
-Node::Node() : id(-1) {
+Node::Node() : id(-1), edges(nullptr), edgesCount(0) {
 }
 
-Node::Node(int32_t id) : id(id) {
+Node::Node(int32_t id) : id(id), edges(nullptr), edgesCount(0) {
 }
 
 Node::Node(int32_t id, EdgeArray edges, uint32_t edgesCount) : id(id), edges(edges), edgesCount(edgesCount) {

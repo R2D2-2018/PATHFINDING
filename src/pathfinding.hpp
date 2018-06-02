@@ -18,16 +18,22 @@
 #include "pathfinding_algorithm.hpp"
 #include "queue.hpp"
 
+#include <array>
+
 namespace Pathfinding {
-constexpr const uint32_t nodesLen = 9;
+constexpr const uint32_t graphsLen = 10;
+constexpr const uint32_t nodesLen = 1024;
 constexpr const uint32_t edgesLen = 4096;
 constexpr const uint32_t algorithmsLen = 1;
-extern Node nodes[nodesLen];
+extern std::array<Graph, graphsLen> graphs;
+extern ObjectPool<Node, nodesLen> nodePool;
 extern ObjectPool<NodeArray, edgesLen> edgePool;
 extern PathfindingAlgorithm *algorithms[algorithmsLen];
 
 #ifdef BMPTK_TARGET_test
-Node *getDebugNodes();
+Graph &getDebugGraph();
+
+NodeArray getDebugNodes();
 
 void reset();
 #endif

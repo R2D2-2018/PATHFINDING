@@ -21,6 +21,14 @@ class Graph {
 
   public:
     /**
+     * @brief Default Graph Constructor
+     *
+     * @details
+     * Constructs a graph object with all external references and parameters nulled.
+     */
+    Graph();
+
+    /**
      * @brief Construct a new Graph object
      *
      * @details
@@ -41,6 +49,21 @@ class Graph {
      * @param[out] len Length of the nodes array
      */
     void getNodes(NodeArray &nodes, uint32_t &len);
+
+    /**
+     * @brief Returns a reference to the Node with the given id
+     *
+     * @param[in] id Id to find in nodes
+     */
+    Node &getNodeWithId(NodeId id);
+
+    /**
+     * @brief Sets the internal nodes pointer to point to the given NodeArray nodes and sets the internal nodeCount to len
+     *
+     * @param[in] nodes
+     * @param[in] len
+     */
+    void setNodes(NodeArray nodes, uint32_t len);
 
     /**
      * @brief Returns a pointer to the first node in Node* Graph::nodes

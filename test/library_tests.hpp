@@ -46,17 +46,17 @@ TEST_CASE("Pathfinding::addNode(NodeId) initialization test", "[pathfinding][int
     REQUIRE(res[8] == true);
 
     // Get the internal nodes array to test if they are initialized correctly.
-    Pathfinding::Node *nodes = Pathfinding::getDebugNodes();
+    Pathfinding::Graph graph = Pathfinding::getDebugGraph();
 
-    REQUIRE(nodes[0].getId() == 0);
-    REQUIRE(nodes[1].getId() == 1);
-    REQUIRE(nodes[2].getId() == 2);
-    REQUIRE(nodes[3].getId() == 3);
-    REQUIRE(nodes[4].getId() == 4);
-    REQUIRE(nodes[5].getId() == 5);
-    REQUIRE(nodes[6].getId() == 6);
-    REQUIRE(nodes[7].getId() == 7);
-    REQUIRE(nodes[8].getId() == 8);
+    REQUIRE(graph.getNodeWithId(0).getId() == 0);
+    REQUIRE(graph.getNodeWithId(1).getId() == 1);
+    REQUIRE(graph.getNodeWithId(2).getId() == 2);
+    REQUIRE(graph.getNodeWithId(3).getId() == 3);
+    REQUIRE(graph.getNodeWithId(4).getId() == 4);
+    REQUIRE(graph.getNodeWithId(5).getId() == 5);
+    REQUIRE(graph.getNodeWithId(6).getId() == 6);
+    REQUIRE(graph.getNodeWithId(7).getId() == 7);
+    REQUIRE(graph.getNodeWithId(8).getId() == 8);
 }
 
 TEST_CASE("addEdge", "[pathfinding][interface]") {
@@ -89,13 +89,13 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
     REQUIRE(res[10] == true);
     REQUIRE(res[11] == true);
 
-    Pathfinding::Node *nodes = Pathfinding::getDebugNodes();
+    Pathfinding::NodeArray nodes = Pathfinding::getDebugNodes();
 
     SECTION("Node 0 connected to Node 1") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[0].getEdges(edges, edgesCount);
 
@@ -115,7 +115,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[0].getEdges(edges, edgesCount);
 
@@ -135,7 +135,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[1].getEdges(edges, edgesCount);
 
@@ -155,7 +155,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[1].getEdges(edges, edgesCount);
 
@@ -175,7 +175,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[2].getEdges(edges, edgesCount);
 
@@ -195,7 +195,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[3].getEdges(edges, edgesCount);
 
@@ -215,7 +215,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[3].getEdges(edges, edgesCount);
 
@@ -235,7 +235,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[4].getEdges(edges, edgesCount);
 
@@ -255,7 +255,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[4].getEdges(edges, edgesCount);
 
@@ -275,7 +275,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[5].getEdges(edges, edgesCount);
 
@@ -295,7 +295,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[6].getEdges(edges, edgesCount);
 
@@ -315,7 +315,7 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
         bool connected = false;
         bool doubleConnected = false;
 
-        Pathfinding::Node **edges;
+        Pathfinding::EdgeArray edges;
         uint32_t edgesCount;
         nodes[7].getEdges(edges, edgesCount);
 
@@ -334,6 +334,16 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
 
 TEST_CASE("addWeakEdge", "[pathfinding][interface]") {
     Pathfinding::reset();
+
+    Pathfinding::addNode(0);
+    Pathfinding::addNode(1);
+    Pathfinding::addNode(2);
+    Pathfinding::addNode(3);
+    Pathfinding::addNode(4);
+    Pathfinding::addNode(5);
+    Pathfinding::addNode(6);
+    Pathfinding::addNode(7);
+    Pathfinding::addNode(8);
 
     bool res[24] = {Pathfinding::addWeakEdge(0, 1), Pathfinding::addWeakEdge(0, 3), Pathfinding::addWeakEdge(1, 0),
                     Pathfinding::addWeakEdge(1, 2), Pathfinding::addWeakEdge(1, 4), Pathfinding::addWeakEdge(2, 1),
@@ -368,5 +378,247 @@ TEST_CASE("addWeakEdge", "[pathfinding][interface]") {
     REQUIRE(res[21] == true);
     REQUIRE(res[22] == true);
     REQUIRE(res[23] == true);
+
+    Pathfinding::NodeArray nodes = Pathfinding::getDebugNodes();
+
+    SECTION("Node 0 connected to Node 1") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[0].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[1] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[1] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 0 connected to Node 3") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[0].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[3] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[3] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 1 connected to Node 2") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[1].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[2] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[2] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 1 connected to Node 4") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[1].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[4] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[4] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 2 connected to Node 5") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[2].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[5] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[5] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 3 connected to Node 4") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[3].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[4] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[4] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 3 connected to Node 6") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[3].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[6] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[6] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 4 connected to Node 5") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[4].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[5] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[5] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 4 connected to Node 7") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[4].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[7] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[7] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 5 connected to Node 8") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[5].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[8] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[8] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 6 connected to Node 7") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[6].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[7] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[7] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
+
+    SECTION("Node 7 connected to Node 8") {
+        bool connected = false;
+        bool doubleConnected = false;
+
+        Pathfinding::EdgeArray edges;
+        uint32_t edgesCount;
+        nodes[7].getEdges(edges, edgesCount);
+
+        for (uint32_t i = 0; i < edgesCount; i++) {
+            if (edges[i] == &nodes[8] && connected == false) {
+                connected = true;
+            } else if (edges[i] == &nodes[8] && connected == true) {
+                doubleConnected = true;
+            }
+        }
+
+        REQUIRE(doubleConnected == false);
+        REQUIRE(connected == true);
+    }
 }
 #endif // LIBRARY_TESTS_HPP
