@@ -14,7 +14,7 @@ Graph::Graph() : nodes(nullptr), nodeCount(0), alg(nullptr) {
 Graph::Graph(NodeArray nodes, uint32_t nodeCount) : nodes(nodes), nodeCount(nodeCount), alg(nullptr) {
 }
 
-void Graph::getNodes(NodeArray &nodes, uint32_t &len) {
+void Graph::getNodes(NodeArray &nodes, uint32_t &len) const {
     nodes = this->nodes;
     len = this->nodeCount;
 }
@@ -24,11 +24,11 @@ void Graph::setNodes(NodeArray nodes, uint32_t len) {
     this->nodeCount = len;
 }
 
-Node *Graph::getNodes() {
+Node *Graph::getNodes() const {
     return nodes;
 }
 
-Node &Graph::getNodeWithId(NodeId id) {
+Node &Graph::getNodeWithId(NodeId id) const {
     // quick lookup
     if (id < nodeCount && nodes[id].getId() == id) {
         return nodes[id];

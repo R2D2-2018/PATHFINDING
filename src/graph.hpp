@@ -48,14 +48,14 @@ class Graph {
      * @param[out] nodes Nodes array pointer to write to
      * @param[out] len Length of the nodes array
      */
-    void getNodes(NodeArray &nodes, uint32_t &len);
+    void getNodes(NodeArray &nodes, uint32_t &len) const;
 
     /**
      * @brief Returns a reference to the Node with the given id
      *
      * @param[in] id Id to find in nodes
      */
-    Node &getNodeWithId(NodeId id);
+    Node &getNodeWithId(NodeId id) const;
 
     /**
      * @brief Sets the internal nodes pointer to point to the given NodeArray nodes and sets the internal nodeCount to len
@@ -70,7 +70,7 @@ class Graph {
      *
      * @return Node* First node in Node* Graph::nodes
      */
-    NodeArray getNodes();
+    NodeArray getNodes() const;
 
     /**
      * @brief Sets the given algorithm to use for pathfinding
