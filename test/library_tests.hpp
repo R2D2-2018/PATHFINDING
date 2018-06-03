@@ -59,7 +59,16 @@ TEST_CASE("Pathfinding::addNode(NodeId) initialization test", "[pathfinding][int
     REQUIRE(graph.getNodeWithId(8).getId() == 8);
 }
 
-TEST_CASE("addEdge", "[pathfinding][interface]") {
+/**
+ * @brief Pathfinding::addEdge(NodeId, NodeId) allocation test
+ * 
+ * @details
+ * This test testes if the function Pathfinding::addEdge(NodeId, NodeId) allocates edges accordingly.
+ * A square graph with nodes 0 to 8 is constructed in a gridlike pattern. Each edge is tested if it
+ * are connected only once to neighboring nodes. Nodes that are double connected throw an error.
+ * Nodes that are not connected but should be connected will throw an error as well.
+ */
+TEST_CASE("Pathfinding::addEdge(NodeId, NodeId) allocation test", "[pathfinding][interface]") {
     Pathfinding::reset();
 
     Pathfinding::addNode(0);
@@ -332,7 +341,17 @@ TEST_CASE("addEdge", "[pathfinding][interface]") {
     }
 }
 
-TEST_CASE("addWeakEdge", "[pathfinding][interface]") {
+/**
+ * @brief Pathfinding::addWeakEdge(NodeId, NodeId) allocation test
+ * 
+ * @details
+ * This test tests whether Pathfinding::addWeakEdge(NodeId, NodeId) allocates only unidirectional edges.
+ * A square graph with 9 nodes is generated using the addWeakEdge function and after connecting the nodes
+ * in the graph, it is tested whether nodes are connected accordingly. Not all nodes are explicitly tested
+ * but it can be assummed that the function addWeakEdge is working accordingly. An error is thrown when
+ * two nodes are double connected or not connected when they should be.  
+ */
+TEST_CASE("Pathfinding::addWeakEdge(NodeId, NodeId) allocation test", "[pathfinding][interface]") {
     Pathfinding::reset();
 
     Pathfinding::addNode(0);
