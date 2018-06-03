@@ -1,10 +1,17 @@
+/**
+ * @file      main.cpp
+ * @brief     Pathfinding main program
+ * @author    Julian van Doorn
+ * @license   See LICENSE
+ */
+
+#include <iostream>
+
 #include "wrap-hwlib.hpp"
 
+#include "pathfinding.hpp"
+
+#include <iostream>
+
 int main() {
-    WDT->WDT_MR = WDT_MR_WDDIS;
-
-    hwlib::wait_ms(1000);
-    hwlib::cout << "Hello world!" << hwlib::endl;
-
-    return 0;
 }
