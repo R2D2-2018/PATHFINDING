@@ -36,7 +36,6 @@ Node &Graph::getNodeWithId(NodeId id) const {
 
     // fallback
     for (uint32_t i = 0; i < nodeCount; i++) {
-        std::cout << nodes[i] << std::endl;
         if (nodes[i].getId() == id) {
             return nodes[i];
         }
