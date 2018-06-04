@@ -5,7 +5,12 @@
  * @license   See LICENSE
  */
 
-#include <iostream>
+#ifndef BFS_TESTS_HPP
+#define BFS_TESTS_HPP
+
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+#include "pathfinding.hpp"
 
 /**
  * @brief Breadth First Search Varying Source and Destination Test Case
@@ -49,7 +54,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
     nodes[7].setEdges(&edges[19], 3);
     nodes[8].setEdges(&edges[22], 2);
 
-    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9, edges, 24);
+    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9);
     Pathfinding::BreadthFirstSearch bfs;
 
     g.setAlgorithm(bfs);
@@ -224,7 +229,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
     nodes[7].setEdges(&edges[19], 3);
     nodes[8].setEdges(&edges[22], 2);
 
-    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9, edges, 24);
+    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9);
     Pathfinding::BreadthFirstSearch bfs;
 
     g.setAlgorithm(bfs);
@@ -400,7 +405,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
     nodes[7].setEdges(&edges[19], 3);
     nodes[8].setEdges(&edges[22], 2);
 
-    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9, edges, 24);
+    Pathfinding::Graph g = Pathfinding::Graph(nodes, 9);
     Pathfinding::BreadthFirstSearch bfs;
 
     g.setAlgorithm(bfs);
@@ -681,3 +686,5 @@ TEST_CASE("Node Datatype", "[pathfinding][datatype]") {
         REQUIRE(*edges[1] == nodes[7]);
     }
 }
+
+#endif // BFS_TESTS_HPP

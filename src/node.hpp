@@ -21,7 +21,7 @@ using EdgeArray = Edge *;
 
 class Node {
   private:
-    uint32_t id;
+    int32_t id;
     EdgeArray edges;
     uint32_t edgesCount;
     uint32_t state;
@@ -38,7 +38,7 @@ class Node {
      *
      * @param id Id of the constructed node
      */
-    Node(uint32_t id);
+    Node(int32_t id);
 
     /**
      * @brief Construct a new Node object with the given id and edges
@@ -47,7 +47,14 @@ class Node {
      * @param edges Edges array to use for this node
      * @param edgesCount Amount of edges this node has
      */
-    Node(uint32_t id, EdgeArray edges, uint32_t edgesCount);
+    Node(int32_t id, EdgeArray edges, uint32_t edgesCount);
+
+    /**
+     * @brief Returns the Id of this node as set by the constructor
+     *
+     * @return -1 when id is not set, any other int when id is set
+     */
+    int32_t getId() const;
 
     /**
      * @brief Gets the edges array of this Node

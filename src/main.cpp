@@ -11,7 +11,5 @@
 
 #include "pathfinding.hpp"
 
-#include <iostream>
-
 int main() {
 }

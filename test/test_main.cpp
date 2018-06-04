@@ -6,11 +6,5 @@
  */
 
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-
-#include "wrap-hwlib.hpp"
-
-#include "pathfinding.hpp"
-
 #include "bfs_tests.hpp"
 #include "library_tests.hpp"
