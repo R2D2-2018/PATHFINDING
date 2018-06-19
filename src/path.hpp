@@ -11,32 +11,42 @@
 #include "node.hpp"
 #include "queue.hpp"
 
-// note: Node **const &path, uint32_t len,
-
 namespace Pathfinding {
 class Path {
   private:
-    // uint32_t maxNodeCount;
-    // Node *path[32]; // 32 vaste waarde
-    queue<Node *, 32> path; // drive in the order of the queue
+    const uint32_t maxPathLen;
+    uint32_t pathLen;
+    // Node *path[maxPathLen]; // 32 vaste waarde
+    // queue<Node *, maxPathLen> path; // FIFO path
 
   public:
     /**
      * @brief Empty constructor
+     *
+     * Creates an empty path object
      */
     Path();
+
+    /**
+     * @brief Constructor with given max path length
+     *
+     * Creates a path object of max length maxLen
+     *
+     * @param maxLen max path length
+     */
+    Path(uint32_t maxLen);
 
     /**
      * @brief Add node at the end of the path
      *
      * @param Node node that will be added at the end
      */
-    void addNode(Node node); // enqueue
+    void addNode(Node &node); // enqueue
     /**
      * @brief Remove first node of the path
      *
      */
-    Node *getNode() const; // dequeue zonder return
+    Node *getNode(); // dequeue zonder return
     /**
      * @brief Get the Path Length
      *
@@ -54,5 +64,5 @@ class Path {
      */
     void showFirst() const;
 };
-};     // namespace Pathfinding
+} // namespace Pathfinding
 #endif // PATH_HPP
