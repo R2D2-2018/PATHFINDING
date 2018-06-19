@@ -14,10 +14,10 @@
 namespace Pathfinding {
 class Path {
   private:
-    const uint32_t maxPathLen;
+    uint32_t size;
     uint32_t pathLen;
-    // Node *path[maxPathLen]; // 32 vaste waarde
-    // queue<Node *, maxPathLen> path; // FIFO path
+    Node *path[32]; // 32 vaste waarde
+                    // queue<Node *, maxPathLen> path; // FIFO path
 
   public:
     /**
@@ -34,7 +34,7 @@ class Path {
      *
      * @param maxLen max path length
      */
-    Path(uint32_t maxLen);
+    Path(uint32_t size);
 
     /**
      * @brief Add node at the end of the path
