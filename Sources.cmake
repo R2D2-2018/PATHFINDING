@@ -11,6 +11,7 @@ include_directories (${catch}/single_include)
 # Source Files:
 
 set (sources
+	src/main.cpp
 	src/libc-stub.cpp
     src/a_star.cpp
     src/best_first_search.cpp
