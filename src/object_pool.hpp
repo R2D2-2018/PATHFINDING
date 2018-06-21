@@ -1,7 +1,7 @@
 #ifndef CLASS_POOL_HPP
 #define CLASS_POOL_HPP
 
-#include <iostream>
+/// #include <iostream>
 #include <math.h>
 
 namespace Pathfinding {
