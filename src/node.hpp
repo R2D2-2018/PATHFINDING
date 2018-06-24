@@ -8,7 +8,7 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
-#include <iostream>
+//#include <iostream>
 
 #include <cstddef>
 #include <stdint.h>
@@ -120,11 +120,11 @@ class Node {
         return !(this == &n);
     }
 
-    bool operator==(nullptr_t n) const {
+    bool operator==(std::nullptr_t n) const {
         return this == n;
     }
 
-    bool operator!=(nullptr_t n) const {
+    bool operator!=(std::nullptr_t n) const {
         return !(this == n);
     }
 };
