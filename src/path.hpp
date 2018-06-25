@@ -33,26 +33,28 @@ class Path {
      */
     void addNode(Node &node);
     /**
-     * @brief Remove first node of the path
+     * @brief Remove first node of the path and return it.
      *
+     * @return Node First node in path
      */
     Node *getNode();
     /**
      * @brief Get the Path Length
      *
-     * @return uinr32_t length of path
+     * @return uinr32_t Amount of elements currently in path
      */
     uint32_t getPathLen() const;
     /**
-     * @brief Show entire path
+     * @brief Print the entire path on terminal
      *
      */
     void showPath() const;
     /**
      * @brief Show first node without removing it
      *
+     * @return Node First node in path
      */
-    void showFirst() const;
+    Node *showFirst();
 };
 } // namespace Pathfinding
 #endif // PATH_HPP

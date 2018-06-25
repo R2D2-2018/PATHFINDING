@@ -42,7 +42,8 @@ void Path::showPath() const {
     }
 }
 
-void Path::showFirst() const {
-    hwlib::cout << "First node: " << path[0] << hwlib::endl;
+Node *Path::showFirst() {
+    Node *temp = path[0];
+    return temp;
 }
 } // namespace Pathfinding
