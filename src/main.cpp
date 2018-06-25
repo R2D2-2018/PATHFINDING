@@ -5,8 +5,6 @@
  * @license   See LICENSE
  */
 
-#include <iostream>
-
 #include "wrap-hwlib.hpp"
 
 #include "pathfinding.hpp"

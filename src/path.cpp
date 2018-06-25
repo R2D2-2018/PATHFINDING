@@ -6,42 +6,43 @@
  */
 
 #include "path.hpp"
-#include <iostream>
+#include "wrap-hwlib.hpp"
 
 namespace Pathfinding {
-Path::Path() : pathLen(0), size(32) {
-}
-
-Path::Path(uint32_t maxLen) : pathLen(0), size(maxLen) {
+Path::Path() : currentLen(0) {
 }
 
 void Path::addNode(Node &node) {
-    path[pathLen] = &node;
-    pathLen++;
-} // enqueue
+    if (currentLen < size) {
+        path[currentLen] = &node;
+        currentLen++;
+    } else {
+        hwlib::cout << "Path too long" << hwlib::endl;
+    }
+}
 
 Node *Path::getNode() {
     Node *temp = path[0];
-    for (int i = 0; i < pathLen; i++) {
-        path[i] = path[i + 1]; // move all element to the left except first one
+    for (int i = 0; i < currentLen; i++) {
+        path[i] = path[i + 1];
     }
-    pathLen--;
+    currentLen--;
 
     return temp;
 }
 
 uint32_t Path::getPathLen() const {
-    return pathLen;
+    return currentLen;
 }
 
 void Path::showPath() const {
-    std::cout << "Path: " << std::endl;
-    for (int i = 0; i < pathLen; i++) {
-        std::cout << path[i] << std::endl;
+    hwlib::cout << "Path: " << hwlib::endl;
+    for (int i = 0; i < currentLen; i++) {
+        hwlib::cout << path[i] << hwlib::endl;
     }
 }
 
 void Path::showFirst() const {
-    std::cout << "First node: " << path[0] << std::endl;
+    hwlib::cout << "First node: " << path[0] << hwlib::endl;
 }
 } // namespace Pathfinding

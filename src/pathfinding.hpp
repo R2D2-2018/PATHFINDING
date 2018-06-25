@@ -21,9 +21,9 @@
 #include <array>
 
 namespace Pathfinding {
-constexpr const uint32_t graphsLen = 10;
-constexpr const uint32_t nodesLen = 1024;
-constexpr const uint32_t edgesLen = 4096;
+constexpr const uint32_t graphsLen = 16;
+constexpr const uint32_t nodesLen = 64;
+constexpr const uint32_t edgesLen = 128;
 constexpr const uint32_t algorithmsLen = 1;
 extern std::array<Graph, graphsLen> graphs;
 extern ObjectPool<Node, nodesLen> nodePool;

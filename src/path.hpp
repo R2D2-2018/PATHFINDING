@@ -14,39 +14,29 @@
 namespace Pathfinding {
 class Path {
   private:
-    uint32_t size;
-    uint32_t pathLen;
-    Node *path[32]; // 32 vaste waarde
-                    // queue<Node *, maxPathLen> path; // FIFO path
+    constexpr static uint32_t size = 128;
+    uint32_t currentLen;
+    Node *path[size]; ///< 128 static size
 
   public:
     /**
      * @brief Empty constructor
      *
-     * Creates an empty path object
+     * Creates a path with a maximum size of 128.
      */
     Path();
-
-    /**
-     * @brief Constructor with given max path length
-     *
-     * Creates a path object of max length maxLen
-     *
-     * @param maxLen max path length
-     */
-    Path(uint32_t size);
 
     /**
      * @brief Add node at the end of the path
      *
      * @param Node node that will be added at the end
      */
-    void addNode(Node &node); // enqueue
+    void addNode(Node &node);
     /**
      * @brief Remove first node of the path
      *
      */
-    Node *getNode(); // dequeue zonder return
+    Node *getNode();
     /**
      * @brief Get the Path Length
      *

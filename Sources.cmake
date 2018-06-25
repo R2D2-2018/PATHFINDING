@@ -11,12 +11,13 @@ include_directories (${catch}/single_include)
 # Source Files:
 
 set (sources
-    src/libc-stub.cpp
-    src/a_star.cpp
+	src/main.cpp
+	src/libc-stub.cpp
     src/best_first_search.cpp
     src/breadth_first_search.cpp
     src/graph.cpp
     src/node.cpp
     src/path.cpp
     src/pathfinding.cpp
+	src/wrap-hwlib.cpp
 )

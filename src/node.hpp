@@ -8,8 +8,6 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
-#include <iostream>
-
 #include <cstddef>
 #include <stdint.h>
 
@@ -120,42 +118,15 @@ class Node {
         return !(this == &n);
     }
 
-    bool operator==(nullptr_t n) const {
+    bool operator==(std::nullptr_t n) const {
         return this == n;
     }
 
-    bool operator!=(nullptr_t n) const {
+    bool operator!=(std::nullptr_t n) const {
         return !(this == n);
     }
 };
 
-class AStarNode : public Node {
-  private:
-    Node &node;
-    uint32_t fValue; // hValue + gValue = fValue
-    uint32_t hValue; // level depth/heuristic
-    uint32_t gValue; // movement cost, length between parent-child
-  public:
-    AStarNode();
-
-    AStarNode(Node &node);
-
-    AStarNode(int32_t id);
-
-    AStarNode(int32_t id, EdgeArray edges, uint32_t edgesCount);
-
-    void setF(uint32_t value);
-
-    uint32_t getF();
-
-    void setH(uint32_t value);
-
-    uint32_t getH();
-
-    void setG(uint32_t value);
-
-    uint32_t getG();
-};
 } // namespace Pathfinding
 
 #endif // NODE_HPP
