@@ -88,6 +88,10 @@ std::cout << pool << std::endl;                             // ObjectPool with a
 template <class T, uint32_t POOL_SIZE>
 class ObjectPool {
   private:
+    /**
+     * @brief calculates the amount of bytes required to represent the bitmask
+     * @return the amount of bytes
+     */
     static constexpr uint32_t calculateAvailabilityBitmaskLenLen() {
         if (POOL_SIZE % 8 == 0) {
             return POOL_SIZE / 8;
@@ -102,7 +106,11 @@ class ObjectPool {
     // 1 is available, 0 is unavailable
     uint8_t availabilityBitmask[availabilityBitmaskLen];
     T blocks[POOL_SIZE];
-
+    /**
+     * @brief sets the state of the bit on index i of the bitmask to value b
+     * @param[in] i the index of the bit you want to set
+     * @param[in] b boolean value to set the bit with
+     */
     void setAvailable(const uint32_t i, const bool b) {
         if (i < POOL_SIZE) {
             if (b == true) {
@@ -112,7 +120,11 @@ class ObjectPool {
             }
         }
     }
-
+    /**
+     * @brief returns the state of the bit in the bitsmask on index i
+     * @param[in] i int value of the index of the bit you want to query
+     * @return boolean value returning state of bit on index i or false if outside poolsize
+     */
     bool getAvailable(const uint32_t i) const {
         if (i < POOL_SIZE) {
             return availabilityBitmask[i / 8] & 1 << (i % 8);
@@ -120,7 +132,11 @@ class ObjectPool {
             return false;
         }
     }
-
+    /**
+     * @brief prints the availability of all the bits in the bitmask
+     * @tparam os the os out stream in which you want to print
+     * @param[in] os the os out stream in which you want to print
+     */
     template <class OS>
     void printBlockAvailability(OS &os) const {
         for (uint32_t i = 0; i < availabilityBitmaskLen; i++) {
