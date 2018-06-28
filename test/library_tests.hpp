@@ -15,7 +15,7 @@
 #include "test_util.hpp"
 
 /**
- * @brief Pathfinding::addNode(NodeId) initialization test
+ * @brief Pathfinding::addNode(NodeId) initialization test.
  *
  * @details
  * In this test, the ability to initialize nodes using Pathfinding::addNode(NodeId) is tested.
@@ -56,7 +56,7 @@ TEST_CASE("Pathfinding::addNode(NodeId) initialization test", "[pathfinding][int
 }
 
 /**
- * @brief Pathfinding::addEdge(NodeId, NodeId) single connected test
+ * @brief Pathfinding::addEdge(NodeId, NodeId) single connected test.
  *
  * @details
  * This test testes if the function Pathfinding::addEdge(NodeId, NodeId) connects edges accordingly.
@@ -129,7 +129,7 @@ TEST_CASE("Pathfinding::addEdge(NodeId, NodeId) single connected test", "[pathfi
 }
 
 /**
- * @brief Pathfinding::addEdge(NodeId, NodeId) not connected test
+ * @brief Pathfinding::addEdge(NodeId, NodeId) not connected test.
  *
  * @details
  * This test testes if the function Pathfinding::addEdge(NodeId, NodeId) has no unintended side effects.
@@ -242,7 +242,7 @@ TEST_CASE("Pathfinding::addEdge(NodeId, NodeId) not connected test", "[pathfindi
 }
 
 /**
- * @brief Pathfinding::addWeakEdge(NodeId, NodeId) bidirectional test
+ * @brief Pathfinding::addWeakEdge(NodeId, NodeId) bidirectional test.
  *
  * @details
  * This test tests whether Pathfinding::addWeakEdge(NodeId, NodeId) allows bidirectional edges.
@@ -332,7 +332,7 @@ TEST_CASE("Pathfinding::addWeakEdge(NodeId, NodeId) bidirectional test", "[pathf
 }
 
 /**
- * @brief Pathfinding::addWeakEdge(NodeId, NodeId) not connected test
+ * @brief Pathfinding::addWeakEdge(NodeId, NodeId) not connected test.
  *
  * @details
  * It is tested whether addWeakEdge has no unintended side effects. An error is thrown when
@@ -461,7 +461,7 @@ TEST_CASE("Pathfinding::addWeakEdge(NodeId, NodeId) not connected test", "[pathf
 }
 
 /**
- * @brief Pathfinding::addWeakEdge(NodeId, NodeId) unidirectional test
+ * @brief Pathfinding::addWeakEdge(NodeId, NodeId) unidirectional test.
  *
  * @details
  * This test tests whether Pathfinding::addWeakEdge(NodeId, NodeId) allocates only unidirectional edges.

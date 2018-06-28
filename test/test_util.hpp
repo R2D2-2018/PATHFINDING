@@ -14,42 +14,42 @@
 #include <cstdio>
 
 /**
- * @brief Requires Node {n0Id} to be connected with Node {n1Id}
+ * @brief Requires Node {n0Id} to be connected with Node {n1Id}.
  *
  *
- * @param graph Graph retrieve nodes from
- * @param n0Id Node0 to assert
- * @param n1Id Node1 to assert
+ * @param graph Graph retrieve nodes from.
+ * @param n0Id Node0 to assert.
+ * @param n1Id Node1 to assert.
  */
 static inline void IsConnected(const Pathfinding::Graph &graph, const Pathfinding::NodeId n0Id, const Pathfinding::NodeId n1Id);
 
 /**
- * @brief Requires Node {n0Id} to be not double connected with Node {n1Id}
+ * @brief Requires Node {n0Id} to be not double connected with Node {n1Id}.
  *
  *
- * @param graph Graph to retrieve nodes from
- * @param n0Id Node0 to assert
- * @param n1Id Node1 to assert
+ * @param graph Graph to retrieve nodes from.
+ * @param n0Id Node0 to assert.
+ * @param n1Id Node1 to assert.
  */
 static inline void IsNotDoubleConnected(const Pathfinding::Graph &graph, const Pathfinding::NodeId n0Id,
                                         const Pathfinding::NodeId n1Id);
 
 /**
- * @brief Requires Node {n0Id} to be single connected with Node {n1Id}
+ * @brief Requires Node {n0Id} to be single connected with Node {n1Id}.
  *
- * @param graph Graph to retrieve nodes from
- * @param n0Id Node0 to assert
- * @param n1Id Node1 to assert
+ * @param graph Graph to retrieve nodes from.
+ * @param n0Id Node0 to assert.
+ * @param n1Id Node1 to assert.
  */
 static inline void IsSingleConnected(const Pathfinding::Graph &graph, const Pathfinding::NodeId n0Id,
                                      const Pathfinding::NodeId n1Id);
 
 /**
- * @brief Requires Node {n0Id} to be not connected with Node {n1Id}
+ * @brief Requires Node {n0Id} to be not connected with Node {n1Id}.
  *
- * @param graph Graph to retrieve nodes from
- * @param n0Id Node0 to assert
- * @param n1Id Node1 to assert
+ * @param graph Graph to retrieve nodes from.
+ * @param n0Id Node0 to assert.
+ * @param n1Id Node1 to assert.
  */
 static inline void IsNotConnected(const Pathfinding::Graph &graph, const Pathfinding::NodeId n0Id, const Pathfinding::NodeId n1Id);
 

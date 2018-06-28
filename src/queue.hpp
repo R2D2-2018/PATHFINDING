@@ -12,10 +12,10 @@
 
 namespace Pathfinding {
 /**
- * @brief Simple queue class
+ * @brief Simple queue class.
  *
- * @tparam T Type of the elements placed in this queue
- * @tparam L Length of this queue
+ * @tparam T Type of the elements placed in this queue.
+ * @tparam L Length of this queue.
  */
 template <class T, uint32_t L>
 class queue {
@@ -27,16 +27,16 @@ class queue {
 
   public:
     /**
-     * @brief Construct a new queue object
+     * @brief Construct a new queue object.
      *
      */
     queue() : head(elements), tail(elements), elementCount(0) {
     }
 
     /**
-     * @brief Places a variable of type T in the queue
+     * @brief Places a variable of type T in the queue.
      *
-     * @param v Variable to enqueue
+     * @param[in] v Variable to enqueue.
      */
     void enqueue(T v) {
         if (elementCount < L) {
@@ -51,9 +51,9 @@ class queue {
     }
 
     /**
-     * @brief Takes a variable of type T out of the queue
+     * @brief Takes a variable of type T out of the queue.
      *
-     * @return T Variable dequeued
+     * @return T Variable dequeued.
      */
     T dequeue() {
         if (elementCount > 0) {
@@ -72,10 +72,10 @@ class queue {
     }
 
     /**
-     * @brief Returns whether this queue is empty or not
+     * @brief Returns whether this queue is empty or not.
      *
-     * @return true
-     * @return false
+     * @return true.
+     * @return false.
      */
     bool empty() {
         return head == tail;
