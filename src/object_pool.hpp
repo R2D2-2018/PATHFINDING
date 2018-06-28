@@ -124,7 +124,7 @@ class ObjectPool {
     }
     /**
      * @brief Returns the state of the bit in the bitsmask on index i.
-     * 
+     *
      * @param[in] i Int value of the index of the bit you want to query.
      * @return Boolean value returning state of bit on index i or false if outside poolsize.
      */
