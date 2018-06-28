@@ -13,7 +13,7 @@
 #include "pathfinding.hpp"
 
 /**
- * @brief Breadth First Search Varying Source and Destination Test Case
+ * @brief Breadth First Search Varying Source and Destination Test Case.
  *
  * @details
  * In this test the breadth first search algorithm is tested by calculating paths
@@ -188,7 +188,7 @@ TEST_CASE("Breadth First Search Varying Source and Destination", "[pathfinding][
 }
 
 /**
- * @brief Breadth First Search Varying Source Test Case
+ * @brief Breadth First Search Varying Source Test Case.
  *
  * @details
  * This test case is focused on testing the ability to find paths with differing sources.
@@ -363,7 +363,7 @@ TEST_CASE("Breadth First Search Varying Source", "[pathfinding][algorithm]") {
 }
 
 /**
- * @brief Breadth First Search Destination Test Case
+ * @brief Breadth First Search Destination Test Case.
  *
  * @details
  * This test case is written to test the ability to change destinations
@@ -539,7 +539,7 @@ TEST_CASE("Breadth First Search Destination", "[pathfinding][algorithm]") {
 }
 
 /**
- * @brief Node Datatype Test Case
+ * @brief Node Datatype Test Case.
  *
  * @details
  * This test case tests the ability to construct a network of nodes.

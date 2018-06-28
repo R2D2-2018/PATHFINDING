@@ -21,7 +21,7 @@ class Graph {
 
   public:
     /**
-     * @brief Default Graph Constructor
+     * @brief Default Graph Constructor.
      *
      * @details
      * Constructs a graph object with all external references and parameters nulled.
@@ -29,7 +29,7 @@ class Graph {
     Graph();
 
     /**
-     * @brief Construct a new Graph object
+     * @brief Construct a new Graph object.
      *
      * @details
      * Graphs are used in pathfinding to contain a travelable map.
@@ -43,61 +43,61 @@ class Graph {
     Graph(NodeArray nodes, uint32_t nodeCount);
 
     /**
-     * @brief Replaces the pointers given with pointers pointing towards Node* Graph::nodes and its length
+     * @brief Replaces the pointers given with pointers pointing towards Node* Graph::nodes and its length.
      *
-     * @param[out] nodes Nodes array pointer to write to
-     * @param[out] len Length of the nodes array
+     * @param[out] nodes Nodes array pointer to write to.
+     * @param[out] len Length of the nodes array.
      */
     void getNodes(NodeArray &nodes, uint32_t &len) const;
 
     /**
-     * @brief Returns a reference to the Node with the given id
+     * @brief Returns a reference to the Node with the given id.
      *
-     * @param[in] id Id to find in nodes
+     * @param[in] id Id to find in nodes.
      */
     Node &getNodeWithId(NodeId id) const;
 
     /**
-     * @brief Sets the internal nodes pointer to point to the given NodeArray nodes and sets the internal nodeCount to len
+     * @brief Sets the internal nodes pointer to point to the given NodeArray nodes and sets the internal nodeCount to len.
      *
-     * @param[in] nodes
-     * @param[in] len
+     * @param[in] nodes Nodes to set.
+     * @param[in] len Amount of nodes.
      */
     void setNodes(NodeArray nodes, uint32_t len);
 
     /**
-     * @brief Returns a pointer to the first node in Node* Graph::nodes
+     * @brief Returns a pointer to the first node in Node* Graph::nodes.
      *
-     * @return Node* First node in Node* Graph::nodes
+     * @return Node* First node in Node* Graph::nodes.
      */
     NodeArray getNodes() const;
 
     /**
-     * @brief Sets the given algorithm to use for pathfinding
+     * @brief Sets the given algorithm to use for pathfinding.
      *
      * @details
      * There are a multitude of algorithms available to use for pathfinding.
      * That is why the algorithm is help outside of the graph class. It allows
      * for easier development and usage of different algorithms.
      *
-     * @param[in] alg
+     * @param[in] alg Which algorithm to use.
      */
     void setAlgorithm(PathfindingAlgorithm &alg);
 
     /**
-     * @brief Resets the states of all nodes in Node* Graph::nodes
+     * @brief Resets the states of all nodes in Node* Graph::nodes.
      */
     void reset();
 
     /**
      * @brief Find a path in Node* Graph::nodes from source to dest.
      *
-     * @param[in] source Source node to begin pathfinding
-     * @param[in] dest Destination node to find
-     * @param[out] path Array where the path will be outputted in
-     * @param[in] len Length of path buffer
-     * @param[out] travelled Length of the physical path
-     * @return PathfindingAlgorithm::SuccessState
+     * @param[in] source Source node to begin pathfinding.
+     * @param[in] dest Destination node to find.
+     * @param[out] path Array where the path will be outputted in.
+     * @param[in] len Length of path buffer.
+     * @param[out] travelled Length of the physical path.
+     * @return PathfindingAlgorithm::SuccessState.
      */
     PathfindingAlgorithm::SuccessState findPath(Node &source, Node &dest, Node **const &path, uint32_t len, uint32_t &travelled);
 

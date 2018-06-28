@@ -83,14 +83,15 @@ std::cout << pool << std::endl;                             // ObjectPool with a
  *
  *
  * @tparam T Type of the blocks to allocate. Requires a default constructor.
- * @tparam POOL_SIZE Amount of blocks to allocate
+ * @tparam POOL_SIZE Amount of blocks to allocate.
  */
 template <class T, uint32_t POOL_SIZE>
 class ObjectPool {
   private:
     /**
-     * @brief calculates the amount of bytes required to represent the bitmask
-     * @return the amount of bytes
+     * @brief Calculates the amount of bytes required to represent the bitmask.
+     *
+     * @return The amount of bytes.
      */
     static constexpr uint32_t calculateAvailabilityBitmaskLenLen() {
         if (POOL_SIZE % 8 == 0) {
@@ -107,9 +108,10 @@ class ObjectPool {
     uint8_t availabilityBitmask[availabilityBitmaskLen];
     T blocks[POOL_SIZE];
     /**
-     * @brief sets the state of the bit on index i of the bitmask to value b
-     * @param[in] i the index of the bit you want to set
-     * @param[in] b boolean value to set the bit with
+     * @brief Sets the state of the bit on index i of the bitmask to value b.
+     *
+     * @param[in] i The index of the bit you want to set.
+     * @param[in] b Boolean value to set the bit with.
      */
     void setAvailable(const uint32_t i, const bool b) {
         if (i < POOL_SIZE) {
@@ -121,9 +123,10 @@ class ObjectPool {
         }
     }
     /**
-     * @brief returns the state of the bit in the bitsmask on index i
-     * @param[in] i int value of the index of the bit you want to query
-     * @return boolean value returning state of bit on index i or false if outside poolsize
+     * @brief Returns the state of the bit in the bitsmask on index i.
+     * 
+     * @param[in] i Int value of the index of the bit you want to query.
+     * @return Boolean value returning state of bit on index i or false if outside poolsize.
      */
     bool getAvailable(const uint32_t i) const {
         if (i < POOL_SIZE) {
@@ -133,9 +136,10 @@ class ObjectPool {
         }
     }
     /**
-     * @brief prints the availability of all the bits in the bitmask
-     * @tparam os the os out stream in which you want to print
-     * @param[in] os the os out stream in which you want to print
+     * @brief Prints the availability of all the bits in the bitmask.
+     *
+     * @tparam os The os out stream in which you want to print.
+     * @param[in] os The os out stream in which you want to print.
      */
     template <class OS>
     void printBlockAvailability(OS &os) const {
@@ -148,11 +152,10 @@ class ObjectPool {
 
   public:
     /**
-     * @brief Construct a new Object Pool object
+     * @brief Construct a new Object Pool object.
      *
      * @details
      * Sets all the bytes in availabilityBitmask to 0xFF as initial state.
-     *
      */
     ObjectPool() {
         for (uint32_t i = 0; i < availabilityBitmaskLen; i++) {
@@ -161,7 +164,7 @@ class ObjectPool {
     }
 
     /**
-     * @brief Allocates n blocks with type T
+     * @brief Allocates n blocks with type T.
      *
      * @details
      * This method allocates n blocks of type T. Whichs means that the physical length in bytes
@@ -169,9 +172,9 @@ class ObjectPool {
      * a pointer to the first allocated T is returned. If allocation failed, a nullptr
      * is returned, to indicate failure.
      *
-     * @param n Blocks to allocate
-     * @return T* Pointer to array of T types
-     * @return nullptr_t Failed allocation
+     * @param[in] n Blocks to allocate.
+     * @return T* Pointer to array of T types.
+     * @return nullptr_t Failed allocation.
      */
     T *allocateBlocks(const uint32_t n) {
         uint32_t availabilityCounter = 0;
@@ -208,7 +211,7 @@ class ObjectPool {
     }
 
     /**
-     * @brief Deallocates all blocks that are in series with ptr
+     * @brief Deallocates all blocks that are in series with ptr.
      *
      * @details
      * This method takes the T* and deallocates all allocations that came behind it.
@@ -216,7 +219,7 @@ class ObjectPool {
      * ChassPool<char, 256>::deallocateBlocks(p) must be called in order to deallocate
      * all blocks allocated at p.
      *
-     * @param ptr Pointer to the first element of the allocated elements.
+     * @param[in] ptr Pointer to the first element of the allocated elements.
      */
     void deallocateBlocks(const T *ptr) {
         uint32_t blockIndex = (ptr - blocks);
@@ -228,17 +231,17 @@ class ObjectPool {
     }
 
     /**
-     * @brief Print operator for ObjectPool
+     * @brief Print operator for ObjectPool.
      *
      * @details
      * Prints "ObjectPool with availabilityBitmask: xxxxxxxx" where xxxxxxxx is a list
      * of ones and zeroes representing the availabilityBitmask. The length of said list
-     * varies based on the given POOL_SIZE
+     * varies based on the given POOL_SIZE.
      *
      * @tparam OS
-     * @param os Output Stream to write to
-     * @param cp ObjectPool to print
-     * @return OS& Allows for chaining << calls
+     * @param[in] os Output Stream to write to.
+     * @param[in] cp ObjectPool to print.
+     * @return[in] OS& Allows for chaining << calls.
      */
     template <class OS>
     friend OS &operator<<(OS &os, const ObjectPool &cp) {
