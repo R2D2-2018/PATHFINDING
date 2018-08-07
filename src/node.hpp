@@ -26,6 +26,8 @@ class Node {
     uint32_t edgesCount;
     uint32_t state;
     Edge parent;
+    uint32_t G;
+    uint32_t H;
 
   public:
     /**
@@ -106,6 +108,30 @@ class Node {
      * @param[in] parent Parent of this node.
      */
     void setParent(std::nullptr_t parent);
+
+    /**
+     * @brief Get the total score of this node.
+     */
+    uint32_t getScore();
+
+    /**
+     * @brief Get the G score of this node.
+     */
+    uint32_t getGScore();
+
+    /**
+     * @brief Set the G score of this node.
+     *
+     * @param[in] G_ G score of this node.
+     */
+    void setGScore(uint32_t G_);
+
+    /**
+     * @brief Set the H score of this node.
+     *
+     * @param[in] H_ H score of this node.
+     */
+    void setHScore(uint32_t H_);
 
     template <class T>
     friend T &operator<<(T &os, const Node &n) {

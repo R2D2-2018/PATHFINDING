@@ -50,4 +50,22 @@ void Node::setParent(Node &parent) {
 void Node::setParent(std::nullptr_t parent) {
     this->parent = nullptr;
 }
+
+uint32_t Node::getScore() {
+    return G + H;
+}
+
+uint32_t Node::getGScore() {
+    return G;
+}
+
+void Node::setGScore(uint32_t G_) {
+    G = G_;
+    return;
+}
+
+void Node::setHScore(uint32_t H_) {
+    H = H_;
+    return;
+}
 } // namespace Pathfinding
